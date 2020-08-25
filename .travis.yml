@@ -1,7 +1,5 @@
 sudo: false
 language: node_js
-global:
-  $GH_TOKEN: af66632794719ec4d1f4ea63ee7710ac480e16d2
 node_js:
   - 12 # use nodejs v10 LTS
 cache: npm
