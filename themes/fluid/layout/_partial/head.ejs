@@ -23,6 +23,16 @@ if (page.title) {
   <link rel="dns-prefetch" href="https://cdn.staticfile.org/">
   <link rel="dns-prefetch" href="https://cdn.bootcdn.net/">
 
+  <% const prev = prev_page(page) %>
+  <% if (prev) { %>
+    <link rel='prev' title='<%- prev.title %>' href='<%= url_for(prev.path) %>' />
+  <% } %>
+
+  <% const next = next_page(page) %>
+  <% if (next) { %>
+    <link rel='next' title='<%- next.title %>' href='<%= url_for(next.path) %>' />
+  <% } %>
+
   <link rel="apple-touch-icon" sizes="76x76" href="<%- url_for(theme.apple_touch_icon) %>">
   <link rel="icon" type="image/png" href="<%- url_for(theme.favicon) %>">
 
