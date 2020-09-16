@@ -104,3 +104,7 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Minify
+## Docs: https://github.com/chenzhutian/hexo-all-minifier
+all_minifier: true
