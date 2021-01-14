@@ -107,7 +107,7 @@ deploy:
 
 # Minify
 ## Docs: https://github.com/chenzhutian/hexo-all-minifier
-all_minifier: true
+# all_minifier: true
 
 # SiteMap
 ## Docs: https://github.com/hexojs/hexo-generator-sitemap
