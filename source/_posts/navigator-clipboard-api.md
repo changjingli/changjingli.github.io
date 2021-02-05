@@ -1,5 +1,6 @@
 ---
-layout: navigator.clipboard title: navigator.clipboard API date: 2021-02-02 15:21:12
+layout: navigator.clipboard 
+title: navigator.clipboard API date: 2021-02-02 15:21:12
 tags: [navigator.clipboard, Clipboard, 剪贴板]
 category: [技术研究]
 ---
