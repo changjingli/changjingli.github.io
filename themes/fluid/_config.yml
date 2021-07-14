@@ -282,11 +282,11 @@ disqus:
 # You can get yout ClientID and ClientSecret from https://github.com/settings/applications/new
 # More info available at https://github.com/gitalk/gitalk#options
 gitalk:
-  clientID:                     # GitHub Application Client ID
-  clientSecret:                 # GitHub Application Client Secret
-  repo:                         # The repo to store comments
-  owner:                        # GitHub repository owner. Can be personal user or organization.
-  admin: ['name']               # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like ['admin'] or ['admin1','admin2']
+  clientID: 1c2b5b404c3f458f2ce7                    # GitHub Application Client ID
+  clientSecret: a91a37b2ca918b6da525bf9fff7ecd152b880bd2                # GitHub Application Client Secret
+  repo:  blog_commit_gitalk                       # The repo to store comments
+  owner:  changjingli                      # GitHub repository owner. Can be personal user or organization.
+  admin: ['changjingli']               # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like ['admin'] or ['admin1','admin2']
   id: location.pathname         # The unique id of the page. Length must less than 50.
   language: zh-CN               # Localization language key, en, zh-CN and zh-TW are currently available.
   labels: ['Gitalk']            # GitHub issue labels.
