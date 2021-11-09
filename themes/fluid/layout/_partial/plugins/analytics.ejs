@@ -26,7 +26,15 @@
 
   <% if (theme.web_analytics.gtag){ %>
     <!-- Google gtag.js -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.web_analytics.gtag %>"></script>
+    <script defer>
+      (function () {
+        var gtag = document.createElement("script");
+        gtag.src = "https://www.googletagmanager.com/gtag/js?id=<%- theme.web_analytics.gtag %>";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gtag, s);
+      })();
+    </script>
+
     <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
