@@ -31,13 +31,9 @@ if (page.description) {
     <%- theme.custom_head %>
   <% } %>
   <title><%= title %></title>
-  <% if (page.wxShareImgUrl) { %>
-        <script>window.wxShareImgUrl = '<%= page.wxShareImgUrl %>';</script>
-    <% } %>
-
-
   <%- partial('_partial/css.ejs') %>
   <%- export_config() %>
   <%- js_ex(theme.static_prefix.internal_js, 'utils.js') %>
   <%- js_ex(theme.static_prefix.internal_js, 'color-schema.js') %>
+    <script data-ad-client="ca-pub-2229702088575054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
