@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+  <meta name="author" content="常敬礼, changjingli">
+  <meta name="keywords" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+  <meta name="description" content="逻辑赋值运算符（Logical Assignment Operators） TC39提案GitHub地址：📖  示例1234567891011&#x2F;&#x2F; 逻辑或赋值x ||&#x3D; y;x || (x &#x3D; y);&#x2F;&#x2F; 逻辑与赋值x &amp;&amp;&#x3D; y;x &amp;&amp; (x &#x3D; y);&#x2F;&#x2F; 逻辑空赋值x ??&#x3D; y;x ?? (x &#x3D; y); 1234567891011const updat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES2021 新特性！">
+<meta property="og:url" content="https://changjingli.github.io/2021/06/29/es2021-features/index.html">
+<meta property="og:site_name" content="敬礼的唠叨">
+<meta property="og:description" content="逻辑赋值运算符（Logical Assignment Operators） TC39提案GitHub地址：📖  示例1234567891011&#x2F;&#x2F; 逻辑或赋值x ||&#x3D; y;x || (x &#x3D; y);&#x2F;&#x2F; 逻辑与赋值x &amp;&amp;&#x3D; y;x &amp;&amp; (x &#x3D; y);&#x2F;&#x2F; 逻辑空赋值x ??&#x3D; y;x ?? (x &#x3D; y); 1234567891011const updat">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702151020501YZLBS0JKCHUz.png">
+<meta property="og:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702163756434SLqfhm.png">
+<meta property="og:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702164914515G3NaE7.png">
+<meta property="og:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210705141400937EE4x70.png">
+<meta property="og:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210705171947464YZ2zCv.png">
+<meta property="og:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210705172218276Cb8Niv.png">
+<meta property="article:published_time" content="2021-06-29T09:51:48.000Z">
+<meta property="article:modified_time" content="2025-06-08T13:51:06.000Z">
+<meta property="article:author" content="常敬礼, changjingli">
+<meta property="article:tag" content="ES2021">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702151020501YZLBS0JKCHUz.png">
+  
+    <meta name="google-site-verification" content="IB4F-abROYnG2u94_aPCUVw13RrwRoBVqKS9K2Y9Trc" />
+  
+  <title>ES2021 新特性！ - 敬礼的唠叨</title>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"changjingli.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-SJEXRJ8ZC6","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"581s7TVcHRKA7avHMxdlV1IY-gzGzoHsz","app_key":"kB4TGTWU8HMKfPXm7p9ixp5R","server_url":"https://581s7tvc.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+    <script data-ad-client="ca-pub-2229702088575054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>常说</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="ES2021 新特性！">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-29 09:51" pubdate>
+        2021年6月29日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">ES2021 新特性！</h1>
+            
+            <div class="markdown-body">
+              <h2 id="逻辑赋值运算符（Logical-Assignment-Operators）"><a href="#逻辑赋值运算符（Logical-Assignment-Operators）" class="headerlink" title="逻辑赋值运算符（Logical Assignment Operators）"></a>逻辑赋值运算符（Logical Assignment Operators）</h2><blockquote>
+<p>TC39提案GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-logical-assignment">📖</a></p>
+</blockquote>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 逻辑或赋值</span><br>x ||= y;<br>x || (x = y);<br><br><span class="hljs-comment">// 逻辑与赋值</span><br>x &amp;&amp;= y;<br>x &amp;&amp; (x = y);<br><br><span class="hljs-comment">// 逻辑空赋值</span><br>x ??= y;<br>x ?? (x = y);<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> updateID = <span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> &#123;<br><br>  <span class="hljs-comment">// 传统写法</span><br>  <span class="hljs-keyword">if</span> (!user.id) user.id = <span class="hljs-number">1</span><br><br>  <span class="hljs-comment">// 或这样</span><br>  user.id = user.id || <span class="hljs-number">1</span><br><br>  <span class="hljs-comment">// 最新的逻辑或写法</span><br>  user.id ||= <span class="hljs-number">1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">config</span>(<span class="hljs-params">options</span>) </span>&#123;<br>  options.duration ??= <span class="hljs-number">100</span>;<br>  options.speed ??= <span class="hljs-number">25</span>;<br>  <span class="hljs-keyword">return</span> options;<br>&#125;<br><br>config(&#123; <span class="hljs-attr">duration</span>: <span class="hljs-number">125</span> &#125;); <span class="hljs-comment">// &#123; duration: 125, speed: 25 &#125;</span><br>config(&#123;&#125;); <span class="hljs-comment">// &#123; duration: 100, speed: 25 &#125;</span><br></code></pre></td></tr></table></figure>
+<h3 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h3><p><img src="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702151020501YZLBS0JKCHUz.png" srcset="/img/loading.gif" lazyload alt="image-20210702151020501"></p>
+<h2 id="数字分隔符（Numeric-Separators）"><a href="#数字分隔符（Numeric-Separators）" class="headerlink" title="数字分隔符（Numeric Separators）"></a>数字分隔符（Numeric Separators）</h2><blockquote>
+<p>为了提高数字可读性，可以在数字间使用_(U+005F)作为分隔符<a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-numeric-separator">📖</a></p>
+</blockquote>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-number">10_0000_0000</span>            <span class="hljs-comment">// 十亿</span><br><span class="hljs-number">1_0147_5938.38</span>          <span class="hljs-comment">// 一亿多</span><br><br><span class="hljs-keyword">let</span> fee = <span class="hljs-number">123_00</span>;       <span class="hljs-comment">// ¥123 (12300分)</span><br><span class="hljs-keyword">let</span> fee = <span class="hljs-number">1_2300</span>;       <span class="hljs-comment">// ¥12,300 (显然1_2300可读性更好)</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-number">0.00_0001</span> <span class="hljs-comment">// 百万分之一</span><br><span class="hljs-number">1e10_000</span>  <span class="hljs-comment">// 10^10000</span><br><span class="hljs-number">0xA0_B0_C0</span>;<br><span class="hljs-number">0o2_2_5_6</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h3><ol>
+<li>不允许连续超过一个下划线</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> n = 123__00; <span class="hljs-comment">// SyntaxError: Only one underscore is allowed as numeric separator</span><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>不能出现在数字结尾</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> n = 12300_;  <span class="hljs-comment">// SyntaxError: Numeric separators are not allowed at the end of numeric literals</span><br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>不能在前导0后使用</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> n = 0_12300; <span class="hljs-comment">// SyntaxError: Numeric separator can not be used after leading 0.</span><br></code></pre></td></tr></table></figure>
+<h3 id="浏览器兼容性-1"><a href="#浏览器兼容性-1" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h3><p><img src="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702163756434SLqfhm.png" srcset="/img/loading.gif" lazyload alt="image-20210702163756434"></p>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/mdn-javascript_grammar_numeric_separators">最新兼容性 caniuse.com ➡️</a></p>
+<h2 id="Promise-any-与-AggregateError"><a href="#Promise-any-与-AggregateError" class="headerlink" title="Promise.any 与 AggregateError"></a>Promise.any 与 AggregateError</h2><blockquote>
+<p><code>Promise.any()</code>接收一个<code>Promise</code>可迭代对象，只要其中一个<code>Promise</code>被<code>resolve</code>，就返回那个<em>已成功</em>的<code>promise</code>。</p>
+<p>不会像<code>Promise.all</code>等待其他<code>promise</code>全部完成，也不会像<code>Promise.race</code>那样总是返回第一个(resolve/reject)的<code>promise</code>。</p>
+<p>如果没有 fulfilled (成功的) promise，Promise.any() 返回 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError">AggregateError</a> 错误。</p>
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any">Promise.any MDN地址 📖</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-promise-any">Promise.any TC39地址 📖</a></li>
+</ul>
+</blockquote>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">Promise</span>.any([<br>  fetch(<span class="hljs-string">&#x27;https://v8.dev/&#x27;</span>).then(<span class="hljs-function">() =&gt;</span> <span class="hljs-string">&#x27;home&#x27;</span>),<br>  fetch(<span class="hljs-string">&#x27;https://v8.dev/blog&#x27;</span>).then(<span class="hljs-function">() =&gt;</span> <span class="hljs-string">&#x27;blog&#x27;</span>),<br>  fetch(<span class="hljs-string">&#x27;https://v8.dev/docs&#x27;</span>).then(<span class="hljs-function">() =&gt;</span> <span class="hljs-string">&#x27;docs&#x27;</span>)<br>]).then(<span class="hljs-function">(<span class="hljs-params">first</span>) =&gt;</span> &#123;<br>  <span class="hljs-comment">// Any of the promises was fulfilled.</span><br>  <span class="hljs-built_in">console</span>.log(first);<br>  <span class="hljs-comment">// → &#x27;home&#x27;</span><br>&#125;).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> &#123;<br>  <span class="hljs-comment">// All of the promises were rejected.</span><br>  <span class="hljs-built_in">console</span>.log(error);<br>&#125;);<br><br><span class="hljs-comment">// ⬆️ 上述示例中，error为AggregateError</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> pErr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  reject(<span class="hljs-string">&quot;总是失败&quot;</span>);<br>&#125;);<br><br><span class="hljs-keyword">const</span> pSlow = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">setTimeout</span>(resolve, <span class="hljs-number">500</span>, <span class="hljs-string">&quot;最终完成&quot;</span>);<br>&#125;);<br><br><span class="hljs-keyword">const</span> pFast = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">setTimeout</span>(resolve, <span class="hljs-number">100</span>, <span class="hljs-string">&quot;很快完成&quot;</span>);<br>&#125;);<br><br><span class="hljs-built_in">Promise</span>.any([pErr, pSlow, pFast]).then(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(value);<br>  <span class="hljs-comment">// pFast fulfils first</span><br>&#125;)<br><span class="hljs-comment">// 期望输出: &quot;很快完成&quot;</span><br></code></pre></td></tr></table></figure>
+<h3 id="浏览器兼容性-2"><a href="#浏览器兼容性-2" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h3><p><img src="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210702164914515G3NaE7.png" srcset="/img/loading.gif" lazyload alt="image-20210702164914515"></p>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/mdn-javascript_builtins_aggregateerror">最新兼容性 caniuse.com ➡️</a></p>
+<h2 id="String-prototype-replaceAll"><a href="#String-prototype-replaceAll" class="headerlink" title="String.prototype.replaceAll"></a>String.prototype.replaceAll</h2><blockquote>
+<p><strong><code>replaceAll()</code></strong> 方法返回一个<strong>新</strong>字符串，新字符串所有满足 <code>pattern</code> 的部分都已被<code>replacement</code> 替换。<code>pattern</code>可以是一个字符串或一个 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a>， <code>replacement</code>可以是一个字符串或一个在每次匹配被调用的函数。</p>
+<p><strong>此方法不会修改调用对象，只是返回一个新的字符串。</strong> </p>
+<hr>
+<ul>
+<li> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll">String.prototype.replaceAll MDN文档地址 📖</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-string-replaceall">String.prototype.replaceAll TC39提案地址 📖</a></li>
+</ul>
+</blockquote>
+<h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// const newStr = str.replaceAll(regexp|substr, newSubstr|function)</span><br><br><span class="hljs-string">&#x27;x&#x27;</span>.replace(<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;_&#x27;</span>);<br><span class="hljs-comment">// → &#x27;_x&#x27;</span><br><br><span class="hljs-string">&#x27;xxx&#x27;</span>.replace(<span class="hljs-regexp">/(?:)/g</span>, <span class="hljs-string">&#x27;_&#x27;</span>);<br><span class="hljs-comment">// → &#x27;_x_x_x_&#x27;</span><br><br><span class="hljs-string">&#x27;xxx&#x27;</span>.replaceAll(<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;_&#x27;</span>);<br><span class="hljs-comment">// → &#x27;_x_x_x_&#x27;</span><br><br><span class="hljs-comment">// 第一个参数为Regex时，必须加g标志，否则将会触发TypeError</span><br><span class="hljs-string">&#x27;xxx&#x27;</span>.replaceAll(<span class="hljs-regexp">/(?:)/</span>, <span class="hljs-string">&#x27;_&#x27;</span>);<br><span class="hljs-comment">// → Uncaught TypeError: String.prototype.replaceAll called with a non-global RegExp argument</span><br></code></pre></td></tr></table></figure>
+<h3 id="浏览器兼容性-3"><a href="#浏览器兼容性-3" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h3><p><img src="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210705141400937EE4x70.png" srcset="/img/loading.gif" lazyload alt="image-20210705141400937"></p>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/mdn-javascript_builtins_string_replaceall">最新兼容性 caniuse.com ➡️</a></p>
+<h2 id="WeakRef-和-FinalizationRegistry"><a href="#WeakRef-和-FinalizationRegistry" class="headerlink" title="WeakRef 和 FinalizationRegistry"></a>WeakRef 和 FinalizationRegistry</h2><blockquote>
+<p>对于WeakRef 和 FinalizationRegistry的使用要慎重考虑，**<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#avoid_where_possible">能不使用就尽量不要使用！</a>**</p>
+<p><code>WeakRef</code>对象允许您保留对另一个对象的弱引用，而不会阻止被弱引用对象被GC回收；<code>FinalizationRegistry</code> 对象可以让你在对象被垃圾回收时请求一个回调。</p>
+<hr>
+<ul>
+<li>WeakRefs 和 FinalizationRegistry TC39提案地址 <a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-weakrefs">📖</a></li>
+<li>WeakRefs MDN地址 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef">📖</a></li>
+<li>FinalizationRegistry MDN地址 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/FinalizationRegistry">📖</a></li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> target = &#123;&#125;;<br><span class="hljs-keyword">let</span> wr = <span class="hljs-keyword">new</span> WeakRef(target);<br><br><span class="hljs-comment">//wr and target aren&#x27;t the same</span><br><br><br><span class="hljs-keyword">const</span> registry = <span class="hljs-keyword">new</span> FinalizationRegistry(<span class="hljs-function"><span class="hljs-params">heldValue</span> =&gt;</span> &#123;<br>  <span class="hljs-comment">// ....</span><br>&#125;);<br><br>registry.register(myObject, <span class="hljs-string">&quot;some value&quot;</span>, myObject);<br><span class="hljs-comment">// ... 当不再关心myObject的变化时，可以unregister</span><br>registry.unregister(myObject);<br></code></pre></td></tr></table></figure>
+<h3 id="浏览器兼容性-4"><a href="#浏览器兼容性-4" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h3><p><img src="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210705171947464YZ2zCv.png" srcset="/img/loading.gif" lazyload alt="image-20210705171947464"></p>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/mdn-javascript_builtins_finalizationregistry">最新兼容性 caniuse.com ➡️</a></p>
+<p><img src="https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/image-20210705172218276Cb8Niv.png" srcset="/img/loading.gif" lazyload alt="image-20210705172218276"></p>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/mdn-javascript_builtins_finalizationregistry">最新兼容性 caniuse.com ➡️</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">技术研究</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/ES2021/">ES2021</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/06/nonviolent-communication-note/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">《非暴力沟通》读书笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/02/navigator-clipboard-api/">
+                        <span class="hidden-mobile">navigator.clipboard API</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"1c2b5b404c3f458f2ce7","clientSecret":"a91a37b2ca918b6da525bf9fff7ecd152b880bd2","repo":"blog_commit_gitalk","owner":"changjingli","admin":["changjingli"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '654447cb09f3f706181731a3ebd9d528'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备16052686号-2
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script defer>
+      (function () {
+        var gtag = document.createElement("script");
+        gtag.src = "https://www.googletagmanager.com/gtag/js?id=G-SJEXRJ8ZC6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gtag, s);
+      })();
+    </script>
+
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJEXRJ8ZC6');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
