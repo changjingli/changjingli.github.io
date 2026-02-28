@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+  <meta name="author" content="常敬礼, changjingli">
+  <meta name="keywords" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+  <meta name="description" content="一直以来，感觉自己工作比较“慢”。跟周围同事确认，得到类似的答案。经过一段时间的思考，遂决定动笔记录下自己的思考。 正确理解需求再牛的技术也拯救不了产品上的失败，议论文写成了记述文也一样不会得高分。 正确理解PM的需求，可以通过口述、反问等形式确认自己的理解是否正确。每一个岗位、每一个人的所处环境不一样，大家的“常识”也不一定在一条水平线上。反复确认是非常有必要的，尤其是成员处于磨合阶段。 不要过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于提升开发效率的一些思考">
+<meta property="og:url" content="https://changjingli.github.io/2020/02/24/thinking-about-improving-development-efficiency/index.html">
+<meta property="og:site_name" content="敬礼的唠叨">
+<meta property="og:description" content="一直以来，感觉自己工作比较“慢”。跟周围同事确认，得到类似的答案。经过一段时间的思考，遂决定动笔记录下自己的思考。 正确理解需求再牛的技术也拯救不了产品上的失败，议论文写成了记述文也一样不会得高分。 正确理解PM的需求，可以通过口述、反问等形式确认自己的理解是否正确。每一个岗位、每一个人的所处环境不一样，大家的“常识”也不一定在一条水平线上。反复确认是非常有必要的，尤其是成员处于磨合阶段。 不要过">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-24T15:15:36.000Z">
+<meta property="article:modified_time" content="2026-02-28T14:24:12.000Z">
+<meta property="article:author" content="常敬礼, changjingli">
+<meta property="article:tag" content="模拟面试">
+<meta property="article:tag" content="激情">
+<meta name="twitter:card" content="summary_large_image">
+  
+    <meta name="google-site-verification" content="IB4F-abROYnG2u94_aPCUVw13RrwRoBVqKS9K2Y9Trc" />
+  
+  <title>关于提升开发效率的一些思考 - 敬礼的唠叨</title>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"changjingli.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-SJEXRJ8ZC6","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"581s7TVcHRKA7avHMxdlV1IY-gzGzoHsz","app_key":"kB4TGTWU8HMKfPXm7p9ixp5R","server_url":"https://581s7tvc.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+    <script data-ad-client="ca-pub-2229702088575054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>常说</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="关于提升开发效率的一些思考">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-24 15:15" pubdate>
+        2020年2月24日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">关于提升开发效率的一些思考</h1>
+            
+            <div class="markdown-body">
+              <p>一直以来，感觉自己工作比较“慢”。跟周围同事确认，得到类似的答案。经过一段时间的思考，遂决定动笔记录下自己的思考。</p>
+<h2 id="正确理解需求"><a href="#正确理解需求" class="headerlink" title="正确理解需求"></a>正确理解需求</h2><p>再牛的技术也拯救不了产品上的失败，议论文写成了记述文也一样不会得高分。</p>
+<p>正确理解PM的需求，可以通过口述、反问等形式确认自己的理解是否正确。每一个岗位、每一个人的所处环境不一样，大家的“常识”也不一定在一条水平线上。反复确认是非常有必要的，尤其是成员处于磨合阶段。</p>
+<h2 id="不要过度优化"><a href="#不要过度优化" class="headerlink" title="不要过度优化"></a>不要过度优化</h2><p>我在开发的过程中，经常会过于重视用户体验。本着把最好但体验留给用户的原则，但经常因为这个耽误进度。最典型地是一张登录页面做了一天……</p>
+<p>不是说开发过程中注重用户体验不好，而是在确保基本功能已经完成的情况下。客户着急发版本，你这边还在因为纠结细节上的体验仍未开发页面，即使你的技术再好，代码写得再优雅，怕是都会留下“不靠谱”的印象。</p>
+<p>目前给自己标准如下：</p>
+<p><strong>UI上</strong>遵循设计四大原则。有设计稿按照设计稿开发，没有设计稿参考类似结构的页面风格。保证页面美观、无明显样式问题。</p>
+<p><strong>功能上</strong>完成项目要求的功能后，视情况考虑是否继续深度优化。避免因为一个节点导致后续进度delay。</p>
+<p><strong>代码上</strong>仍严于律己，规规矩矩给变量命名、写好注释，不能给自己、给后来者埋雷。</p>
+<h2 id="减少环境干扰"><a href="#减少环境干扰" class="headerlink" title="减少环境干扰"></a>减少环境干扰</h2><p>网上类似**<em>没事儿不要去打断一个程序员**</em>的帖子有很多，不再赘述。关于减少环境干扰方面，目前我总结的方法如下：</p>
+<ol>
+<li>戴上耳机（不一定放音乐，有时音乐也是一种干扰）</li>
+<li>手机、电脑开启<strong>免打扰</strong>模式</li>
+<li>即时通讯工具设置自动回复，委婉告诉别人不希望被打扰</li>
+</ol>
+<h2 id="保持专注"><a href="#保持专注" class="headerlink" title="保持专注"></a>保持专注</h2><p><strong><em>减少环境干扰是去除外界干扰，保持专注则是去除内心干扰。</em></strong></p>
+<p>外部的干扰可以去除，内心自己的声音难以拒绝。比如肚子饿啦、想喝水啦类似这样的需求，可以提前将这些东西准备在身旁，减少分心时间，以便自己可以迅速回到工作当中。</p>
+<p>工作时，做一个单线程的仔，保持自己内心的专注，一心扑在工作上。一下子突然专心太久可能有点难，可以通过循序渐进地方式慢慢延长自己的专注时间。</p>
+<h2 id="减少重复的工作"><a href="#减少重复的工作" class="headerlink" title="减少重复的工作"></a>减少重复的工作</h2><p>当一件事重复做三遍的时候，就可以考虑自动化了。</p>
+<p>比如批量重命名图片、自动将<code>dist</code>文件夹打包成<code>zip</code>格式、<code>eslint</code>统一代码风格等等，都是利用机器解放我们的时间，所以要善用自动化，留出大把时间去提升自己。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>以上是我对于提升工作效率的思考。近期由于疫情在家办公，自己按照以上标准工作，感觉爽歪歪，每天都有成就感，也从侧面证实这些标准对自己大有裨益。</p>
+<p>行文匆匆，难有疏漏，如有错误还请在评论区指出。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/">思考总结</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95/">模拟面试</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%BF%80%E6%83%85/">激情</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/25/experience-about-mock-interview/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">记一次模拟面试的体会</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"1c2b5b404c3f458f2ce7","clientSecret":"a91a37b2ca918b6da525bf9fff7ecd152b880bd2","repo":"blog_commit_gitalk","owner":"changjingli","admin":["changjingli"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'a69af1a54cdc7afdc921a1ef4b2ccb57'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备16052686号-2
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script defer>
+      (function () {
+        var gtag = document.createElement("script");
+        gtag.src = "https://www.googletagmanager.com/gtag/js?id=G-SJEXRJ8ZC6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gtag, s);
+      })();
+    </script>
+
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJEXRJ8ZC6');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

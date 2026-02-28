@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+  <meta name="author" content="常敬礼, changjingli">
+  <meta name="keywords" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+  <meta name="description" content="有时候我觉得，AI这几年像个突然长大的孩子——几年前还磕磕绊绊地学说话，如今已经能跟人谈笑风生。而我呢，也恰好在看着自己女儿牙牙学语的过程中，见证了人工智能一点点“开窍”的过程。 这篇文章结合我个人的AI学习历程与女儿学话的经历，用接地气的方式，聊聊我眼里的AI发展。不是技术解读，也不算科普文，而是一个普通父亲、一个程序员、一个好奇的人，看到世界变化时的一些感受。 序章 · 当我们试图赋予世界以智">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从女儿学说话，见证了AI思考的过程">
+<meta property="og:url" content="https://changjingli.github.io/2025/11/10/tough-ai-principle-between-ai-and-daughter/index.html">
+<meta property="og:site_name" content="敬礼的唠叨">
+<meta property="og:description" content="有时候我觉得，AI这几年像个突然长大的孩子——几年前还磕磕绊绊地学说话，如今已经能跟人谈笑风生。而我呢，也恰好在看着自己女儿牙牙学语的过程中，见证了人工智能一点点“开窍”的过程。 这篇文章结合我个人的AI学习历程与女儿学话的经历，用接地气的方式，聊聊我眼里的AI发展。不是技术解读，也不算科普文，而是一个普通父亲、一个程序员、一个好奇的人，看到世界变化时的一些感受。 序章 · 当我们试图赋予世界以智">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-10T22:06:33.000Z">
+<meta property="article:modified_time" content="2026-02-28T14:24:12.000Z">
+<meta property="article:author" content="常敬礼, changjingli">
+<meta property="article:tag" content="人工智能">
+<meta name="twitter:card" content="summary_large_image">
+  
+    <meta name="google-site-verification" content="IB4F-abROYnG2u94_aPCUVw13RrwRoBVqKS9K2Y9Trc" />
+  
+  <title>从女儿学说话，见证了AI思考的过程 - 敬礼的唠叨</title>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"changjingli.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-SJEXRJ8ZC6","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"581s7TVcHRKA7avHMxdlV1IY-gzGzoHsz","app_key":"kB4TGTWU8HMKfPXm7p9ixp5R","server_url":"https://581s7tvc.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+    <script data-ad-client="ca-pub-2229702088575054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>常说</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="从女儿学说话，见证了AI思考的过程">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-11-10 22:06" pubdate>
+        2025年11月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      9.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">从女儿学说话，见证了AI思考的过程</h1>
+            
+            <div class="markdown-body">
+              <p>有时候我觉得，AI这几年像个突然长大的孩子——几年前还磕磕绊绊地学说话，如今已经能跟人谈笑风生。而我呢，也恰好在看着自己女儿牙牙学语的过程中，见证了人工智能一点点“开窍”的过程。</p>
+<p>这篇文章结合我个人的AI学习历程与女儿学话的经历，用接地气的方式，聊聊我眼里的AI发展。不是技术解读，也不算科普文，而是一个普通父亲、一个程序员、一个好奇的人，看到世界变化时的一些感受。</p>
+<h2 id="序章-·-当我们试图赋予世界以智能"><a href="#序章-·-当我们试图赋予世界以智能" class="headerlink" title="序章 · 当我们试图赋予世界以智能"></a>序章 · 当我们试图赋予世界以智能</h2><blockquote>
+<p>“人类第一次想让思想被复制出来时，AI的故事就开始了。”</p>
+</blockquote>
+<p>我第一次接触人工智能，是在一个安静的夏日下午。电视机里正播放着一部旧电视剧——孙子是机器人，陪爷爷下象棋。起初他一味让着老人，让他屡战屡胜。直到某天，爷爷嫌他太菜，机器人便冷静地启动了「最深的蓝」模式。几步之间，爷爷败下阵来，气得晕了过去。后来父亲解释：那是 IBM 的象棋机器人 Deep Blue，当年连世界冠军卡斯帕罗夫都输给它。那时的我年纪太小，惊讶有之，恐惧有之，但这颗“智能”的种子，就此在心底落下。</p>
+<p>上大学后，我听说了柯洁与AlphaGo的对弈。起初他赢了一盘，后来再未胜出。这一消息再次唤起了我对智能的好奇——从“最深的蓝”的机械力量，到AlphaGo的思维跃迁，我开始意识到人工智能不再只是冰冷的程序，而是正在接近人类思维的灵魂。那时我仍是旁观者，只觉得——智能的成本正在不断下降，而未来的门，正在悄然打开。</p>
+<p>2022年4月12日，我加入了GitHub Copilot Preview计划，在WebStorm中第一次体验“机器写代码”。它那时还显得笨拙——像一个好奇的学徒，模仿我搜索、复制与粘贴。可正是这份笨拙，让我震撼。那一刻我明白，AI Coding不再只是幻想，而是近在眼前的现实。</p>
+<p>2023年1月，我注册了ChatGPT。从那时起，AI的体验完全不同了。它不再是被动的工具，而像一个会思考、会记忆的伙伴。即便在Memory功能未官宣发布前，它也能记住我的偏好、模仿我的语气，仿佛成为了数字版的“我”。那种被理解、被回应的感觉，让人沉迷。后来我开通了Plus订阅，又为Cursor Pro付费——这两款AI，成为我日常创作与研发的搭档。</p>
+<p>回望这一路，我从电视前的孩童，成长为能与AI并肩的造物者。人类花了数十年，让机器学会“思考”的模样，而我，用了二十年时间，从惊叹者变成了参与者。智能的火种，终于在我手中燃了起来。</p>
+<h2 id="第一章-·-前世今生：人工智能的三次浪潮"><a href="#第一章-·-前世今生：人工智能的三次浪潮" class="headerlink" title="第一章 · 前世今生：人工智能的三次浪潮"></a>第一章 · 前世今生：人工智能的三次浪潮</h2><blockquote>
+<p>“每一次‘造智能’的尝试，都是人类在与自己的思维赛跑。”</p>
+</blockquote>
+<h3 id="第一次浪潮（符号主义）——思考的程序"><a href="#第一次浪潮（符号主义）——思考的程序" class="headerlink" title="第一次浪潮（符号主义）——思考的程序"></a>第一次浪潮（符号主义）——思考的程序</h3><p>20世纪中叶，人工智能第一次被提出。彼时的科学家们相信，只要写下足够多的规则，就能复刻人类思考。于是专家系统、逻辑树、知识库成为早期AI的主角。</p>
+<p>理想很丰满，现实很骨感。规则写不完，知识无法穷尽，这条路最终停在了“理解”的门槛外。</p>
+<h3 id="第二次浪潮（连接主义）——让机器自己学"><a href="#第二次浪潮（连接主义）——让机器自己学" class="headerlink" title="第二次浪潮（连接主义）——让机器自己学"></a>第二次浪潮（连接主义）——让机器自己学</h3><p>当符号派的逻辑失灵，人们转向模仿生物神经元的神经网络。机器不再“被教规则”，而是“自己找规律”。但由于算力有限、数据稀缺，这场革命早早夭折，直到2006年“深度学习”卷土重来。</p>
+<p>它让机器能识别猫、狗、车，却仍不会思考。它会看，却不会说。</p>
+<h3 id="第三次浪潮（生成智能）——语言重塑世界"><a href="#第三次浪潮（生成智能）——语言重塑世界" class="headerlink" title="第三次浪潮（生成智能）——语言重塑世界"></a>第三次浪潮（生成智能）——语言重塑世界</h3><p>直到Transformer横空出世，机器终于学会了“语言”。</p>
+<p>语言是人类智慧的压缩形式：我们用文字传递经验、情感与逻辑。当机器能理解语言，它也就学会了“思维的外壳”。</p>
+<p>算力、数据与算法的三要素同时成熟，AI时代正式拉开帷幕。</p>
+<h2 id="第二章-·-为什么世界选择了LLM"><a href="#第二章-·-为什么世界选择了LLM" class="headerlink" title="第二章 · 为什么世界选择了LLM"></a>第二章 · 为什么世界选择了LLM</h2><blockquote>
+<p>“在所有造物的路径中，语言模型是最像人类的那条路。”</p>
+</blockquote>
+<h3 id="LLM不是唯一，但最通用"><a href="#LLM不是唯一，但最通用" class="headerlink" title="LLM不是唯一，但最通用"></a>LLM不是唯一，但最通用</h3><p>早年的 AI 探索有很多路线：符号逻辑（Symbolic AI）依靠规则；小模型（SLM）专注垂直场景；而 LLM（Large Language Model）通过学习语言本身，掌握了一切抽象的能力。</p>
+<p>语言是人类的“操作系统”，而 LLM 正是以此为模具。</p>
+<h3 id="为什么成功的是它？"><a href="#为什么成功的是它？" class="headerlink" title="为什么成功的是它？"></a>为什么成功的是它？</h3><p>因为 LLM 通过语言建模，找到了<strong>近似理解的统计路径</strong>——它不真正理解，但能模拟理解的结果。</p>
+<p>它不需要真的看世界，只要理解人类如何描述世界。</p>
+<h3 id="语言模型的秘密：统计中的智慧"><a href="#语言模型的秘密：统计中的智慧" class="headerlink" title="语言模型的秘密：统计中的智慧"></a>语言模型的秘密：统计中的智慧</h3><p>LLM 并不懂世界，它只是从海量文本中学习了“下一个词最可能是什么”。但这种概率结构本身，竟重现了人类语言的逻辑之美——就像我们说话时，也并非每次都“思考”，而是被语境与经验引导。</p>
+<h2 id="第三章-·-LLM的工作原理：当孩子学会说话"><a href="#第三章-·-LLM的工作原理：当孩子学会说话" class="headerlink" title="第三章 · LLM的工作原理：当孩子学会说话"></a>第三章 · LLM的工作原理：当孩子学会说话</h2><blockquote>
+<p>“我们造的，不是神，是一个会说话的孩子。”</p>
+</blockquote>
+<p>在理解语言模型如何运作之前，我们先看看它的“生理构造”与性格调校——也就是人们常提到的模型规模、温度与采样参数。这些参数决定了 AI “说话”的个性：是严谨冷静的学者，还是充满想象力的孩子。</p>
+<h3 id="喂食阶段：模仿世界的语言"><a href="#喂食阶段：模仿世界的语言" class="headerlink" title="喂食阶段：模仿世界的语言"></a>喂食阶段：模仿世界的语言</h3><p>模型就像一个婴儿。我们给它听无数人类的对话、书籍、网页，让它从中模仿表达。它不会真正理解，但能学会“句子是如何被排列的”。</p>
+<p>想象你教孩子学说话。起初她只会模仿你的语调与词序——比如你说“你好”，她学着说“你好”；你说“再见”，她也跟着重复。她不知道“你好”代表问候，“再见”意味着离开，她只是重复听到的模式。语言模型的早期训练阶段，也是在这样“喂数据”的过程中完成的。它吸收无数文本，从中学会人类语言的结构与节奏。</p>
+<h3 id="理解阶段：从模仿到抽象"><a href="#理解阶段：从模仿到抽象" class="headerlink" title="理解阶段：从模仿到抽象"></a>理解阶段：从模仿到抽象</h3><p>女儿刚开始学语言的时候，我说：“一闪一闪——”  她立刻接上：“亮晶晶，满天都是小星星！” 但当我接着问她：“后面呢？”  她就答不上来了，因为那一段我还没教；有时候，她还会重复上一句“满天都是小星星”，仿佛在“自我补全”。</p>
+<p>这其实就是语言模型的缩影。模型的任务，就是根据已有内容去预测下一个最可能出现的词。  当它见过足够多的文本后，就能学会在不同语境下“接下去说什么”。</p>
+<p>然而，当信息不足时，它也会像小孩一样—— <strong>编造出听起来合理、实际上并不存在的句子</strong>，这种现象，在 AI 世界里被称为 <strong>“模型幻觉（hallucination）”</strong>。比如，你问它：“谁写了《时间简史2》？”  它可能一本正经地回答：“史蒂芬·霍金。”  ——可问题是，《时间简史2》根本不存在。  这并非模型“撒谎”，而是它从模式出发做了<strong>概率上最合理的猜测</strong>。</p>
+<p>那它是如何学会在成千上万的词里挑重点的呢？靠的就是著名的 <strong>Attention 机制</strong>。</p>
+<blockquote>
+<p>技术上，Attention 会计算不同词之间的“相关性权重”，<br>找出在当前语境下最重要的信息。</p>
+</blockquote>
+<p>简单来说，它让模型学会了<strong>聚焦重点</strong>。就像孩子逐渐明白，“今天”“开心”之间有强关联，而“我”只是语境背景。有了这种“注意力分配”的能力，AI 才能从简单的模仿，迈向更高层次的语言理解。</p>
+<h3 id="反思阶段：矫正自己的表达"><a href="#反思阶段：矫正自己的表达" class="headerlink" title="反思阶段：矫正自己的表达"></a>反思阶段：矫正自己的表达</h3><p>语言模型学会“说话”之后，还需要不断纠错。人类通过父母、老师或环境的反馈修正语言；模型则通过 <strong>人类反馈强化学习（RLHF）</strong> 来优化输出。</p>
+<p>当模型回答“我不知道”时，我们可能给它一个低分；当它答得自然、逻辑清晰时，就给它高分。这样它就逐渐学会哪些回答更“符合人类期望”。</p>
+<p>这个过程，就像家长纠正孩子：“不是‘我去超市买菜菜’，而是‘我去超市买菜’。”经过成千上万次这样的训练，模型逐渐形成更接近人类的表达方式。</p>
+<h3 id="成熟阶段：具备社会性语言能力"><a href="#成熟阶段：具备社会性语言能力" class="headerlink" title="成熟阶段：具备社会性语言能力"></a>成熟阶段：具备社会性语言能力</h3><p>最终，模型能在多轮对话中维持一致逻辑，识别情感语气，甚至“假装懂你”。它能够进行上下文推理、维持主题、适应语境，这时我们说它具备了“社会性语言能力”。</p>
+<p>但我们心里清楚——它并不真正懂世界，只是学会了<strong>如何像懂一样说话</strong>。它的理解，是统计意义上的模仿；它的“思考”，是概率结构的演化。</p>
+<p>而这，正是现代 AI 的魅力所在：不是复制人类智慧，而是以另一种方式<strong>逼近“理解”的幻象</strong>。</p>
+<h3 id="模型参数释义：模型思维的温度与尺度"><a href="#模型参数释义：模型思维的温度与尺度" class="headerlink" title="模型参数释义：模型思维的温度与尺度"></a>模型参数释义：模型思维的温度与尺度</h3><p>每个语言模型的“个性”都可以通过几个关键参数调节，就像孩子的性格与思维方式。</p>
+<ul>
+<li><p><strong>Temperature（温度）</strong>：控制模型回答的创造性。数值越高，它越敢“胡思乱想”；数值越低，它越谨慎、保守。可以把Temperature想象成孩子的“情绪”或“心情”：当你问小孩“吃饭了吗？”</p>
+<ul>
+<li>当Temperature=0时，他会中规中矩地回答：“吃过了。”</li>
+<li>当Temperature=1时，他可能兴奋地说：“中午跟妈妈吃的红烧肉，可好吃啦！”</li>
+</ul>
+<p>温度越高，孩子的回答越生动、越有想象力；温度越低，则更理性克制。</p>
+</li>
+<li><p><strong>Top P（核采样）</strong>：决定模型从多少概率空间中挑选答案。Top P=1表示考虑全部可能性；Top P=0.7意味着只选取概率最高的70%词汇。可以这样理解：Top P像家长限定孩子思考的范围。<br> 比如，当你问小孩：“你今天在学校做了什么？”</p>
+<ul>
+<li><p>当Top P=1时，孩子可能想到什么就说什么：“我画画、打球、吃糖，还看到一只猫！”</p>
+</li>
+<li><p>当Top P=0.5时，孩子会只从最重要的事情里挑一个回答：“我画画。”</p>
+<p>也就是说，Temperature决定孩子说话时的“心情”，Top P决定他选择话题的“范围”。前者控制分布的平滑度，后者控制截断范围，两者共同塑造了AI回答的创造性与稳定性。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Top K</strong>：控制模型在生成每个词时可选的候选词数量。可以理解为孩子在回答前先列出“可能的答案清单”。当K值很小（如1或2）时，孩子几乎总会选最常见的说法；当K值较大时，他可能选择更少见、更有趣的词汇。例如：</p>
+<ul>
+<li>K=1：孩子说“我吃饭了”。</li>
+<li>K=10：孩子说“我吃饭了，还顺便喂了隔壁的小猫。”</li>
+</ul>
+</li>
+<li><p><strong>Max Tokens</strong>：控制模型每次能说多长，相当于家长提醒“别说太多”。当Max Tokens设得太短，回答容易被打断；太长则可能啰嗦或偏题。例如：</p>
+<ul>
+<li>Max Tokens=20：孩子简短回答“我今天画了一只狗”。</li>
+<li>Max Tokens=200：孩子详细描述“我今天画了一只狗，它是黄色的，有条红领巾，还跑到草地上打滚。”</li>
+</ul>
+</li>
+<li><p><strong>Model Size（如72B中的B）</strong>：B代表十亿参数。72B表示该模型拥有约720亿个“神经元连接”。可以把它比作孩子大脑的神经元数量——脑子越大，能记得的东西越多、理解越深。但也要注意：脑容量大不一定更聪明，还得看学到的知识是否优质、思考方式是否高效。</p>
+</li>
+</ul>
+<h2 id="第四章-·-语言模型的流派与生态"><a href="#第四章-·-语言模型的流派与生态" class="headerlink" title="第四章 · 语言模型的流派与生态"></a>第四章 · 语言模型的流派与生态</h2><blockquote>
+<p>“百川入海，各有流向。”</p>
+</blockquote>
+<p>当语言模型的浪潮席卷全球，不同路线与哲学逐渐形成了各自的阵营。它们的区别，不仅在于模型参数的大小，更在于“理解智能的方式”。</p>
+<h3 id="一、OpenAI-系列：工业级闭源路线"><a href="#一、OpenAI-系列：工业级闭源路线" class="headerlink" title="一、OpenAI 系列：工业级闭源路线"></a>一、OpenAI 系列：工业级闭源路线</h3><p>代表作：GPT-3、GPT-4、GPT-5</p>
+<p>OpenAI 走的是典型的 <strong>“规模制胜”</strong> 路线。它的核心哲学是：</p>
+<blockquote>
+<p>“让模型变得足够大，智能就会从复杂度中涌现。”</p>
+</blockquote>
+<p>OpenAI 的产品强调稳定性与通用性。它擅长跨领域的推理、生成和对话管理，几乎定义了“通用智能”的标准。GPT 系列模型经过大量 RLHF 训练，在安全性、礼貌性和上下文一致性上表现最均衡，是目前工业界与研究界的“双标杆”。</p>
+<p>在生态层面，OpenAI 更像是“AI 操作系统”的提供者——从 ChatGPT、DALL·E、Sora 到工具调用接口（function calling），它正在构建一个全链路的智能生态。</p>
+<h3 id="二、Anthropic-系列：安全对齐路线"><a href="#二、Anthropic-系列：安全对齐路线" class="headerlink" title="二、Anthropic 系列：安全对齐路线"></a>二、Anthropic 系列：安全对齐路线</h3><p>代表作：Claude 1、2、3、3.5、Sonnet、Opus</p>
+<p>Anthropic 的理念是“让模型变得更安全、更符合人类价值观”。它提出了 <strong>Constitutional AI（宪法式 AI）</strong> 概念，即通过设定一套“行为准则”让模型自我对齐，减少人类手动打分的成本。</p>
+<p>Claude 的特征是“边界清晰、逻辑优雅”。它更像一位守规矩的思考者，表达克制、善于总结、上下文容量极大（可处理数十万字）。在许多知识密集型任务中，它被认为比 GPT 更稳定。</p>
+<blockquote>
+<p>如果说 OpenAI 像天马行空的发明家，Anthropic 就像严谨的哲学家。</p>
+</blockquote>
+<h3 id="三、Mistral-LLaMA-系列：开放协作路线"><a href="#三、Mistral-LLaMA-系列：开放协作路线" class="headerlink" title="三、Mistral / LLaMA 系列：开放协作路线"></a>三、Mistral / LLaMA 系列：开放协作路线</h3><p>代表作：Mistral 7B、Mixtral 8x22B、LLaMA 2、LLaMA 3</p>
+<p>这一流派主张 <strong>“让智能普惠化”</strong>——人人都能参与训练、部署、改造模型。</p>
+<p>Mistral 与 Meta（LLaMA 系列）代表了欧洲与开源社群的技术精神。它们推崇轻量化、模块化的设计，让研究者和创业者能以较低成本构建高质量模型。</p>
+<p>尤其是 Mixtral 采用 <strong>MoE（Mixture of Experts）架构</strong>，通过让部分专家网络按需激活，实现性能提升与成本控制的平衡。</p>
+<blockquote>
+<p>它们就像开源界的“Linux”，为全球 AI 社群提供了自由与透明的基石。</p>
+</blockquote>
+<h3 id="四、国产系：多元创新路线"><a href="#四、国产系：多元创新路线" class="headerlink" title="四、国产系：多元创新路线"></a>四、国产系：多元创新路线</h3><p>代表作：文心（百度）、通义（阿里）、智谱（清华系）、月之暗面（MiniMax）、<strong>DeepSeek（深度求索）</strong> 等。</p>
+<p>国产大模型呈现出<strong>“多线并进、差异共生”</strong>的局面：</p>
+<ul>
+<li><p>有的聚焦商业生态与产业落地（文心、通义）；</p>
+</li>
+<li><p>有的主攻科研与通用模型研发（智谱、清华系）；</p>
+</li>
+<li><p>有的探索多模态与人格化智能（月之暗面、Kimi 系列）；</p>
+</li>
+<li><p>也有如 <strong>DeepSeek</strong> 这样，以 <strong>高效架构与开源策略</strong> 著称的代表。</p>
+</li>
+</ul>
+<p>DeepSeek 采用 MoE 技术，通过专家混合机制实现“低算力、高性能”的平衡；同时开放模型权重与推理接口，让更多开发者能参与生态共建。它标志着中国模型在“开放协作路线”上的一次重要突破。</p>
+<blockquote>
+<p>如果说 OpenAI 是工业巨舰，Anthropic 是哲学灯塔，Mistral 是开源工坊，那国产系更像是一片充满可能性的大陆——不同生态在这里交汇、试验、共进化。</p>
+</blockquote>
+<h3 id="五、生态演化：从模型到智能网络"><a href="#五、生态演化：从模型到智能网络" class="headerlink" title="五、生态演化：从模型到智能网络"></a>五、生态演化：从模型到智能网络</h3><p>AI 的演化正从“模型”走向“生态”，从“生成”走向“协作”。</p>
+<ul>
+<li><p><strong>从单点模型到多智能体协作（Multi-Agent）</strong>：模型不再单独思考，而是分工合作、彼此对话；</p>
+</li>
+<li><p><strong>从静态训练到持续学习（Continuous Learning）</strong>：模型通过实时反馈不断进化；</p>
+</li>
+<li><p><strong>从闭环系统到开放生态（Open Ecosystem）</strong>：模型不再是产品，而是平台与协议的集合。</p>
+</li>
+</ul>
+<p>在未来的智能生态中，我们不再区分“谁更聪明”，而是看“谁能更好地协同”。真正的智能竞争，不在于参数多少，而在于生态共生的能力。</p>
+<h2 id="第五章-·-造物的工具箱：从提示词到智能体"><a href="#第五章-·-造物的工具箱：从提示词到智能体" class="headerlink" title="第五章 · 造物的工具箱：从提示词到智能体"></a>第五章 · 造物的工具箱：从提示词到智能体</h2><blockquote>
+<p>“当孩子学会说话，我开始教他做事。”</p>
+</blockquote>
+<p>语言让孩子能表达自己，但要让她真正能“做事”，就要学会<strong>理解、记忆、执行</strong>。 AI 也是如此。</p>
+<p>Prompt 是家长的指令，Context 是孩子的理解环境，而 Agent ——就是学会“独立做事”的那一刻。</p>
+<h3 id="一、Prompt-Engineer：像教孩子听懂指令"><a href="#一、Prompt-Engineer：像教孩子听懂指令" class="headerlink" title="一、Prompt Engineer：像教孩子听懂指令"></a>一、Prompt Engineer：像教孩子听懂指令</h3><p>刚开始让女儿收拾玩具，我常说：“把玩具收拾好！”  她往往只是把玩具从地上挪到桌上，然后拍拍手：“我做好啦！”  ——那时我意识到，问题不在她，而在<strong>我的指令太模糊</strong>。后来我改成这样说：</p>
+<blockquote>
+<p>“把所有的小积木放进红色篮子里，大熊放到沙发上，最后拿湿巾擦一擦桌子。”</p>
+</blockquote>
+<p>这次，她完成得非常好。AI 的 Prompt 亦是如此——模糊的指令只能得到模糊的结果，而<strong>清晰、具体、结构化的提示</strong>能让它高效执行。</p>
+<p>❌ <strong>糟糕的 Prompt</strong>：</p>
+<blockquote>
+<p>“帮我写一份周报。”</p>
+</blockquote>
+<p>✅ <strong>清晰的 Prompt</strong>：</p>
+<blockquote>
+<p>“你是一名产品经理，请帮我写一份周报，分三段：本周完成、本周问题、下周计划，语气正式，控制在300字以内。”</p>
+</blockquote>
+<p>就像孩子需要明确的任务边界，模型也需要<strong>清楚知道角色、目标、约束与示例</strong>。<br>这就是 Prompt 工程的艺术——<strong>让智能听懂人话。</strong></p>
+<h3 id="二、Context-Engineer：像教孩子理解场景"><a href="#二、Context-Engineer：像教孩子理解场景" class="headerlink" title="二、Context Engineer：像教孩子理解场景"></a>二、Context Engineer：像教孩子理解场景</h3><p>有一次，我在陪孩子画画，我画了一个房子。她指着画中的房子说：“爸爸在这里，妈妈在那里。”  我问：“那姥姥在哪里呢？”  她想了想，指着另一个地方说：“姥姥在这里。”  接着又补了一句：“这里还有花花。”</p>
+<p>那一刻，我发现她不只是看到了“房子”这个物体，而是把它放进了她理解的世界里。她在画中建立了人物、关系和故事。</p>
+<p>AI 也一样。Prompt 告诉它要做什么，而 Context 告诉它<strong>“在什么背景下做”</strong>。没有上下文的 AI，就像只看到房子的轮廓，却不知道里面住着谁。</p>
+<p>在实践中，Context 包含：</p>
+<ul>
+<li><strong>记忆</strong>：让模型记得上一次的对话，就像孩子记得昨天你讲过的故事；</li>
+<li><strong>背景信息</strong>：告诉模型“这是公司的报告”还是“写给客户的邮件”；</li>
+<li><strong>状态控制</strong>：确保多轮任务的语气与逻辑一致。</li>
+</ul>
+<p><strong>生活对比</strong>：</p>
+<blockquote>
+<p>Prompt 是家长说“去做作业”；<br>Context 是孩子知道“今天是数学作业”；<br>没有 Context，AI 可能去写作文了。</p>
+</blockquote>
+<blockquote>
+<p><strong>Prompt 让模型回答正确的问题，Context 让模型在正确的世界里思考。</strong></p>
+</blockquote>
+<h3 id="三、AI-Agent：像孩子学会“自己做事”"><a href="#三、AI-Agent：像孩子学会“自己做事”" class="headerlink" title="三、AI Agent：像孩子学会“自己做事”"></a>三、AI Agent：像孩子学会“自己做事”</h3><p>妈妈给她买了很多贴纸，她就自己坐在小桌旁，认真地贴了起来，很快就把整张贴纸用完了。  有一次，她兴致勃勃地把贴画贴在电视屏幕上。我们告诉她：“如果贴在这里，就看不到小猪佩奇了。”  她想了想，点点头，从那以后就再也没有贴在电视上。</p>
+<p>那一刻我意识到：她不再只是被动地听从指令，而是开始学会在规则中做出选择。她理解了“贴哪儿合适”，也理解了“为什么不能贴在电视上”。这种理解，不只是行为上的改变，而是她第一次在行动里体现出<strong>思考与判断</strong>。</p>
+<p>AI 的成长也是如此——从盲目执行到理解目的，从完成任务到自我约束。它不只是遵循命令，而是在规则与目标之间学会平衡。</p>
+<p>这正是 Agent 概念的核心：<strong>让智能在理解中行动</strong>。AI 的下一个阶段，也正是如此——从“会说”到“会做”。这就是 Agent：一个能理解目标、记忆上下文、使用工具完成任务的“独立智能”。</p>
+<h4 id="示例-1：AI-写周报-→-像孩子完成作业"><a href="#示例-1：AI-写周报-→-像孩子完成作业" class="headerlink" title="示例 1：AI 写周报 → 像孩子完成作业"></a>示例 1：AI 写周报 → 像孩子完成作业</h4><ul>
+<li>你说“写一份周报”；</li>
+<li>它理解语境（上周项目、部门目标）；</li>
+<li>自动撰写内容并格式化；</li>
+<li>最后调用邮件接口自动发送——<br>就像孩子做完作业后，还能自己交上去。</li>
+</ul>
+<h4 id="示例-2：AI-天气助手-→-像孩子帮忙查天气"><a href="#示例-2：AI-天气助手-→-像孩子帮忙查天气" class="headerlink" title="示例 2：AI 天气助手 → 像孩子帮忙查天气"></a>示例 2：AI 天气助手 → 像孩子帮忙查天气</h4><ul>
+<li>你设定目标：“每天早上告诉我要不要带伞”；</li>
+<li>它学会调用天气 API，生成自然语言提醒；</li>
+<li>再用脚本推送到微信；<br>这就像孩子学会“自己查天气预报”并提醒你带伞。</li>
+</ul>
+<p>Agent 的本质，是让智能具备“行动力”——<br>它不只是语言的回声，而是能在世界里<strong>完成任务的合作者</strong>。</p>
+<h3 id="四、从听话到懂事：智能成长的隐喻"><a href="#四、从听话到懂事：智能成长的隐喻" class="headerlink" title="四、从听话到懂事：智能成长的隐喻"></a>四、从听话到懂事：智能成长的隐喻</h3><p>教孩子做事最难的部分，不是她不会，而是她不理解“为什么要做”。AI 也是一样。它可以完成无数任务，但真正的智能，是<strong>在语义与目的之间找到意义</strong>。</p>
+<p>Prompt 是语言的起点，Context 是理解的土壤，而 Agent ——  则是那个终于学会自己去探索的孩子。</p>
+<p>当我们设计 AI，其实就像在养育一个新生命。我们教它理解、约束、反思，也在被它的反馈重新教育。</p>
+<blockquote>
+<p>“语言教会了机器思考，思考让机器开始行动，而行动——让我们重新理解了思考的意义。”</p>
+</blockquote>
+<h2 id="第六章-·-成为弄潮儿：加入AI世界的路径"><a href="#第六章-·-成为弄潮儿：加入AI世界的路径" class="headerlink" title="第六章 · 成为弄潮儿：加入AI世界的路径"></a>第六章 · 成为弄潮儿：加入AI世界的路径</h2><blockquote>
+<p>“人人都能成为AI时代的弄潮儿，只要你愿意理解思维的本质。”</p>
+</blockquote>
+<h3 id="一、基础层：先学会“开口说话”"><a href="#一、基础层：先学会“开口说话”" class="headerlink" title="一、基础层：先学会“开口说话”"></a>一、基础层：先学会“开口说话”</h3><p>当孩子第一次学会说出“爸爸妈妈”，那一声稚嫩的呼唤，让你知道她终于能和世界建立联系。</p>
+<p>学习 AI 的第一步，就是让机器“听懂你说话”。不需要复杂算法，只要从最简单的对话开始。</p>
+<p><strong>小任务：做一个自己的问答机器人</strong></p>
+<ul>
+<li>用 OpenAI 接口或 Ollama；</li>
+<li>输入一句话，得到回应；</li>
+<li>加一句问候语，比如“你好，我是你的学习伙伴”。</li>
+</ul>
+<p>这就是第一声“爸爸妈妈”——  AI 世界在回应你。意义不在于功能强大，而在于你学会了<strong>沟通</strong>。</p>
+<h3 id="二、工程层：从模仿到协作"><a href="#二、工程层：从模仿到协作" class="headerlink" title="二、工程层：从模仿到协作"></a>二、工程层：从模仿到协作</h3><p>当孩子能听懂故事，就会开始续写故事。我读：“从前有一只小熊……”  她立刻接：“它有一个好朋友小猫！”</p>
+<p>这就是“上下文”与“角色感”的觉醒。在 AI 学习中，这一阶段对应着<strong>系统构建与记忆设计</strong>。不再只是提问，而是开始规划流程、保存语境，让模型“记得”你的需求。</p>
+<p><strong>实践任务：做一个会记住你的学习助手</strong></p>
+<ul>
+<li>使用 LangChain 或 LlamaIndex；</li>
+<li>让它记住你上次学习的内容；</li>
+<li>再次对话时，它主动问：“要不要接着上次的主题？”</li>
+</ul>
+<p>这就像孩子对你说：“爸爸，我们上次还没讲完那个故事呢。”  AI 也在慢慢变得“有记忆”“有延续性”。</p>
+<h3 id="三、创造层：让“孩子”自己去探索"><a href="#三、创造层：让“孩子”自己去探索" class="headerlink" title="三、创造层：让“孩子”自己去探索"></a>三、创造层：让“孩子”自己去探索</h3><p>当女儿第一次独立完成一幅画，我并没有告诉她该怎么画。她画了个奇怪的小屋、三朵天上的花，还有一只会飞的猫。我笑着说：“原来你的世界是这样的呀。”</p>
+<p>AI 的创造力，也在于让它去“乱画”。当你能让多个智能体协作、自动完成复杂任务——<br>你就从“使用者”成长为“创造者”。</p>
+<p><strong>任务示例：做一个能自主学习的 Agent</strong></p>
+<ul>
+<li>每天抓取 AI 新闻 → 总结 → 存入数据库；</li>
+<li>LLM 负责理解，Tools 负责执行；</li>
+<li>第二天，它能主动告诉你：“我今天学到一篇关于 DeepSeek 的文章。”</li>
+</ul>
+<p>这就像我只教过孩子用磁吸片搭建二维图形，突然有一天向我展示她用磁吸片搭建的“大桥”。AI也在慢慢变得探索出更多的可能。</p>
+<h3 id="四、成长建议：像教孩子那样学习-AI"><a href="#四、成长建议：像教孩子那样学习-AI" class="headerlink" title="四、成长建议：像教孩子那样学习 AI"></a>四、成长建议：像教孩子那样学习 AI</h3><ol>
+<li><p><strong>允许笨拙。</strong><br>孩子摔倒很多次才会走稳，AI 学习也一样。每一次错误都是“参数更新”。</p>
+</li>
+<li><p><strong>多鼓励少否定。</strong><br>模型输出不好，不是它笨，而是你的提示还不够明确。学会引导比责怪更重要。</p>
+</li>
+<li><p><strong>玩中学。</strong><br>孩子通过玩游戏理解世界。你也可以用小项目来练手，比如自动整理照片、生成日报、做个人博客。</p>
+</li>
+<li><p><strong>结伴成长。</strong><br>每个父母都需要社群，每个 AI 学习者也需要。加入开源社区、学习群，你会发现——成长从来不是独行。</p>
+</li>
+</ol>
+<blockquote>
+<p>“AI 不会替你成长，但它能陪你一起成长。”</p>
+</blockquote>
+<h2 id="第七章-·-我的经验谈：从迷茫到掌控"><a href="#第七章-·-我的经验谈：从迷茫到掌控" class="headerlink" title="第七章 · 我的经验谈：从迷茫到掌控"></a>第七章 · 我的经验谈：从迷茫到掌控</h2><blockquote>
+<p>“掌控AI，不是掌控机器，而是掌控自己的思维边界。”</p>
+</blockquote>
+<h3 id="一、区分管理问题与工程问题"><a href="#一、区分管理问题与工程问题" class="headerlink" title="一、区分管理问题与工程问题"></a>一、区分管理问题与工程问题</h3><blockquote>
+<p>“AI不是下属，但使用AI的思维方式，与管理下属极其相似。所以你要先清楚自己要什么，再谈让它如何实现。”</p>
+</blockquote>
+<p>很多人迷茫：AI的答案到底对不对？其实这往往不是算法问题，而是管理问题。</p>
+<p>当你让AI写一篇报告，却不知道预期结果是什么，这就像领导布置任务而不清楚目标。AI只是执行者，它按你定义的目标行事。</p>
+<p><strong>如果你心中没有正确答案，AI也不可能给你想要的结果。</strong></p>
+<ul>
+<li><p>管理问题：我希望结果达到什么效果？边界在哪里？</p>
+</li>
+<li><p>工程问题：我如何优化Prompt、Chain、参数以提高稳定性？</p>
+</li>
+</ul>
+<h3 id="二、AI-Min-vs-AI-Max：在成本与准确之间取平衡"><a href="#二、AI-Min-vs-AI-Max：在成本与准确之间取平衡" class="headerlink" title="二、AI Min vs AI Max：在成本与准确之间取平衡"></a>二、AI Min vs AI Max：在成本与准确之间取平衡</h3><blockquote>
+<p>“智慧，不在于用多少AI，而在于何时该用、何时该不用。”</p>
+</blockquote>
+<ul>
+<li><strong>AI Min 思维</strong>：能不用AI就不用AI。适合规则清晰、错误成本高的场景，如财务、工程计算。目标是可控。</li>
+<li><strong>AI Max 思维</strong>：能用AI就用AI。适合探索性、创意性工作，如写作、原型设计、需求分析。目标是效率。</li>
+</ul>
+<p>真正的智慧在于找到折中点：</p>
+<blockquote>
+<p>“让AI承担试探与创造，让人类负责判断与决策。”</p>
+</blockquote>
+<h3 id="三、Prompt-≠-魔法，Context-才是灵魂"><a href="#三、Prompt-≠-魔法，Context-才是灵魂" class="headerlink" title="三、Prompt ≠ 魔法，Context 才是灵魂"></a>三、Prompt ≠ 魔法，Context 才是灵魂</h3><blockquote>
+<p>“造物的难点，不是说什么，而是让对方在对的语境里听懂。”</p>
+</blockquote>
+<p>很多人纠结Prompt的写法，其实真正决定AI水平的，是上下文。语境是AI的世界观——其中包含记忆、目标、约束。</p>
+<p>一个好的Context，胜过一百条Prompt。</p>
+<h3 id="四、别追工具，要养“心智模型”"><a href="#四、别追工具，要养“心智模型”" class="headerlink" title="四、别追工具，要养“心智模型”"></a>四、别追工具，要养“心智模型”</h3><blockquote>
+<p>“每一次技术更新，都是对你思维系统的压测。”</p>
+</blockquote>
+<p>LangChain、CrewAI、Dify……它们都只是暂时的容器。</p>
+<p>不要追框架，要追问：它解决了AI系统的哪个问题？</p>
+<p>当你能回答这个问题时，你就已经不是用户，而是设计者。</p>
+<h3 id="五、AI是放大器，不是拯救者"><a href="#五、AI是放大器，不是拯救者" class="headerlink" title="五、AI是放大器，不是拯救者"></a>五、AI是放大器，不是拯救者</h3><blockquote>
+<p>“AI放大你的能力，也放大你的混乱。”</p>
+</blockquote>
+<p>AI不会让你变聪明，只会让你的思维模式更极端。</p>
+<p>如果你清晰、系统，它会让你高效、强大。</p>
+<p>如果你混乱、浅薄，它会让你更混乱、更迷茫。</p>
+<p>所以，使用的第一步，是<strong>先造清晰的自己。</strong></p>
+<h2 id="尾章-·-智能的未来与人的位置"><a href="#尾章-·-智能的未来与人的位置" class="headerlink" title="尾章 · 智能的未来与人的位置"></a>尾章 · 智能的未来与人的位置</h2><blockquote>
+<p>“当我们造出能思考的机器，也必须重新定义‘思考’。”</p>
+</blockquote>
+<p>AI 不是人类的替代，而是人类思想的延伸。</p>
+<p>它让我们反观自己：什么是创造？什么是理解？什么是意识？</p>
+<p>或许，造物的终点，不是创造另一个自己，而是终于理解自己为何想要创造。<br><strong>未来的智能，不属于机器，也不属于人，而属于那些懂得如何与智能共生、共同学习的人。</strong></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%A0%94%E7%A9%B6%E5%AD%A6%E4%B9%A0/">研究学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/11/19/monthly-2025-10/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">25年10月总结 ｜ 今天的因，明天的果</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/10/18/monthly-2025-09/">
+                        <span class="hidden-mobile">25年09月总结 ｜ 理解世界，成就自己</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"1c2b5b404c3f458f2ce7","clientSecret":"a91a37b2ca918b6da525bf9fff7ecd152b880bd2","repo":"blog_commit_gitalk","owner":"changjingli","admin":["changjingli"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '52af8e3f04d471a83f30bd3dd713deb5'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备16052686号-2
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script defer>
+      (function () {
+        var gtag = document.createElement("script");
+        gtag.src = "https://www.googletagmanager.com/gtag/js?id=G-SJEXRJ8ZC6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gtag, s);
+      })();
+    </script>
+
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJEXRJ8ZC6');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

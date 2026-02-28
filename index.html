@@ -1,0 +1,863 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+  <meta name="author" content="常敬礼, changjingli">
+  <meta name="keywords" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+<meta property="og:type" content="website">
+<meta property="og:title" content="敬礼的唠叨">
+<meta property="og:url" content="https://changjingli.github.io/index.html">
+<meta property="og:site_name" content="敬礼的唠叨">
+<meta property="og:description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="常敬礼, changjingli">
+<meta property="article:tag" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+<meta name="twitter:card" content="summary_large_image">
+  
+    <meta name="google-site-verification" content="IB4F-abROYnG2u94_aPCUVw13RrwRoBVqKS9K2Y9Trc" />
+  
+  <title>敬礼的唠叨</title>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"changjingli.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-SJEXRJ8ZC6","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"581s7TVcHRKA7avHMxdlV1IY-gzGzoHsz","app_key":"kB4TGTWU8HMKfPXm7p9ixp5R","server_url":"https://581s7tvc.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+    <script data-ad-client="ca-pub-2229702088575054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>常说</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Stay Hungry, Stay Foolish">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2026/02/28/monthly-2026-01/" target="_self">
+          26年01月总结 ｜保持好奇，保持进步
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2026/02/28/monthly-2026-01/" target="_self">
+          
+          
+            
+          
+          转眼二月底了，再过10个月将迈入2027年，真快呵。
+准备写二月份总结才发现一月份的还没发，就再优化优化吧，正好可以补充新观点。
+一些感悟很多人问我AI Coding能力这么强，作为软件开发从业者是否感到焦虑。我的回答是不焦虑，相反我很感谢AI帮我解决很多重复性的工作，提升开发效率，使我有精力研究其他知识。我的理由如下：
+第一、AI 的智能与人类智能有着本质上的不同
+最近（26年2月初）网上流行关
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-02-28 22:09" pubdate>
+              2026-02-28
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2026/01/11/monthly-2025-12/" target="_self">
+          25年12月总结 ｜ 夺回思考，拒绝外包
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2026/01/11/monthly-2025-12/" target="_self">
+          
+          
+            
+          
+          夺回思考，拒绝外包，重新建立大脑思考秩序。
+一些感悟你是否遇到过“脑子说：我会了，手说：并没有”的情况；你是否遇到过“明明有很多话想说，却说不出来”的情况、你是否遇到过“接到一个任务无从下手，找了AI也聊不明白”的情况……
+借此谈谈我的12月感悟——不要外包你的思考能力！
+之所以出现上述情况，一方面是大脑的生理性懒惰，因为大脑要从出生到去世要一直工作，这是进化的结果，心理学称之为认知吝啬鬼。
+另一
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-01-11 22:12" pubdate>
+              2026-01-11
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/12/14/monthly-2025-11/" target="_self">
+          25年11月总结 ｜ 不急不躁，从从容容
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/12/14/monthly-2025-11/" target="_self">
+          
+          
+            
+          
+          不急不躁，从从容容。我的“最小阻力”长期执行系统。
+一些感悟最近重温《士兵突击》，里面很多堪称人生哲理的金句，常看常新。
+高连长被许三多开悟以后对团长说那句话“这个早熟的人吧，通常都晚熟，骄傲的人又很急性，这两样我都占了。”
+这句话简直是对我的过往经历概括性总结。以前总觉得自己不够好，却苦苦寻觅不到答案，哪怕读了这么多书、看了这么多人文历史，都远不及这一句带来的醍醐灌顶般地震撼。
+早熟的人，往往因
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-12-14 23:02" pubdate>
+              2025-12-14
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/11/19/monthly-2025-10/" target="_self">
+          25年10月总结 ｜ 今天的因，明天的果
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/11/19/monthly-2025-10/" target="_self">
+          
+          
+            
+          
+          今天的因，明天的果
+一些感悟十月新感悟：今天的因，明天的果
+最近有一个感悟：人当下的状态是过去各种因素下综合加持下的投影，也就是说当下的“果”是以前的“因”综合演进而来的。
+举个例子，“一口吃不成个胖子”，胖子不是一天吃出来的，而是长年累月的热量差慢慢长出来的，胖是果，因是热量差。因的原因有很多种，生活压力、作息习惯、饮食方式、基础代谢等各种方面的因素……
+再延伸一下，“三岁看小，七岁看老”是咱们
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-19 15:40" pubdate>
+              2025-11-19
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/11/10/tough-ai-principle-between-ai-and-daughter/" target="_self">
+          从女儿学说话，见证了AI思考的过程
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/11/10/tough-ai-principle-between-ai-and-daughter/" target="_self">
+          
+          
+            
+          
+          有时候我觉得，AI这几年像个突然长大的孩子——几年前还磕磕绊绊地学说话，如今已经能跟人谈笑风生。而我呢，也恰好在看着自己女儿牙牙学语的过程中，见证了人工智能一点点“开窍”的过程。
+这篇文章结合我个人的AI学习历程与女儿学话的经历，用接地气的方式，聊聊我眼里的AI发展。不是技术解读，也不算科普文，而是一个普通父亲、一个程序员、一个好奇的人，看到世界变化时的一些感受。
+序章 · 当我们试图赋予世界以智
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-10 22:06" pubdate>
+              2025-11-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%A0%94%E7%A9%B6%E5%AD%A6%E4%B9%A0/">研究学习</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/10/18/monthly-2025-09/" target="_self">
+          25年09月总结 ｜ 理解世界，成就自己
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/10/18/monthly-2025-09/" target="_self">
+          
+          
+            
+          
+          理解世界，成就自己
+一些感悟九月新感悟：尽早完成社会化，但不要止步于社会化。
+社会化的目的不是从众，而是获得在复杂社会中自洽、自由且高效生存的能力；再社会化是指身份变化触发的二次适应。
+人的一生都要经历从“自然人”到“社会人”的过程——学习规则、理解关系、承担角色，但在真正意义上完成社会化之后，挑战才刚刚开始。因为接下来的问题，不再是“我能不能适应社会”，而是“我能否在适应社会的同时，仍然做自己”
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-10-18 21:30" pubdate>
+              2025-10-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/09/18/monthly-2025-08/" target="_self">
+          25年08月总结 ｜ 以序驭乱，自在从容
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/09/18/monthly-2025-08/" target="_self">
+          
+          
+            
+          
+          以序驭乱 自在从容
+一些感悟八月新感悟：通过系统对抗不确定性。
+所谓“系统”，简单来说就是由多个相互依赖的要素构成的整体，具备输入→处理→输出的动态机制，可以通过反馈机制进行调节和稳定。
+所谓“不确定性”，就是外部环境或内部状态波动，导致未来结果难以预测的情况。它既可能来自外部环境、也可能来自自身状态，还可能是源于信息本身的不完整与噪声。
+系统的价值在于，把外部、内部、信息层面的不确定性，通过输入
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-09-18 15:13" pubdate>
+              2025-09-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/08/05/monthly-2025-07/" target="_self">
+          25年07月总结 ｜ 自欺无益，天道酬诚
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/08/05/monthly-2025-07/" target="_self">
+          
+          
+            
+          
+          日拱一卒 功成不居
+一些感悟本月随着渤海小吏的《小吏精讲西游原著》结束，伴随着最后一集的结束，仿佛自己也走完了一场西游之路，感谢渤海小吏掰开了 揉碎了讲的这些大智慧，强烈推荐大家也看看。
+第一个智慧是：真正好的东西，从来没有速成的
+万事万物都有它的节奏，时间这关省不得。方向选对了，就老老实实日拱一卒。所有骗局的核心，都是利用你“一步登天”的贪欲。佛主帮悟空脱离低级趣味，花了三百年；让他学会遇到狠人
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-08-05 20:45" pubdate>
+              2025-08-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/07/07/monthly-2025-06/" target="_self">
+          25年06月总结 ｜ 日拱一卒，久久为功
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/07/07/monthly-2025-06/" target="_self">
+          
+          
+            
+          
+          日拱一卒 久久为功
+一些感悟本月复盘了关于职场成长的底层逻辑，总结出 踏实 -&gt; 可靠 -&gt; 信任 的成长路径。踏实意味着无论工作难易程度如何，都要百分百对待；当事事有回应、件件有着落时，自然形成可靠印象；久而久之别人会对你产生信任，从而获得更多机会。
+我是典型的技术者思维，喜欢有挑战的工作，喜欢钻研东西，凭着一股子激情，也做出些成绩。靠激情固然可以拿下短期成果，但它终究是燃料，不是引
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-07-07 22:31" pubdate>
+              2025-07-07
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/06/08/monthly-2025-05/" target="_self">
+          25年05月总结 ｜ 重构系统，主动进化
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/06/08/monthly-2025-05/" target="_self">
+          
+          
+            
+          
+          重构系统 主动进化
+一些感悟人到三十，感觉今年在疯狂学习/补习本应在青少年时期学习的东西：如何阅读、如何思考、如何表达、如何与他人沟通，如何与世界相处，如何激励自己，如何正确看待别人意见，如何耐心……
+为了过好这一生，我们究竟还要学会哪些知识或技能呢？这个问题始终萦绕在我的脑海，直到偶然看到雷军2011年在腾讯关于移动互联网的演讲，提到为什么iPhone发布5年后仍然没有被超越的原因，他给出的原因
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-06-08 21:47" pubdate>
+              2025-06-08
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备16052686号-2
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script defer>
+      (function () {
+        var gtag = document.createElement("script");
+        gtag.src = "https://www.googletagmanager.com/gtag/js?id=G-SJEXRJ8ZC6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gtag, s);
+      })();
+    </script>
+
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJEXRJ8ZC6');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

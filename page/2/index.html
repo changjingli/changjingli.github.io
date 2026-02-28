@@ -1,0 +1,891 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+  <meta name="author" content="常敬礼, changjingli">
+  <meta name="keywords" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+  <meta name="description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+<meta property="og:type" content="website">
+<meta property="og:title" content="敬礼的唠叨">
+<meta property="og:url" content="https://changjingli.github.io/page/2/index.html">
+<meta property="og:site_name" content="敬礼的唠叨">
+<meta property="og:description" content="常敬礼的个人博客, 常敬礼的心得分享,常敬礼的成长">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="常敬礼, changjingli">
+<meta property="article:tag" content="常敬礼,常说,前端,个人博客,个人网站,首页,web前端,JavaScript,css,html">
+<meta name="twitter:card" content="summary_large_image">
+  
+    <meta name="google-site-verification" content="IB4F-abROYnG2u94_aPCUVw13RrwRoBVqKS9K2Y9Trc" />
+  
+  <title>敬礼的唠叨</title>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"changjingli.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-SJEXRJ8ZC6","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"581s7TVcHRKA7avHMxdlV1IY-gzGzoHsz","app_key":"kB4TGTWU8HMKfPXm7p9ixp5R","server_url":"https://581s7tvc.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+    <script data-ad-client="ca-pub-2229702088575054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>常说</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Stay Hungry, Stay Foolish">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/05/04/monthly-2025-04/" target="_self">
+          25年04月总结 ｜ 学而时习，知行合一
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/05/04/monthly-2025-04/" target="_self">
+          
+          
+            
+          
+          学而时习 知行合一
+一些感悟这个月的一个转变源于我对“知与行”的重新理解。
+过去我总觉得自己懂那么多大道理，却过得并不如意。这个月读到一篇故事让我豁然开朗，后世据此典故引申出成语“轮扁斫轮”，很好的解释了“为什么懂得很多道理，但依然过不好这一生”。
+故事里，齐桓公在读书，木匠轮扁却说，那些书不过是“古人之糟粕”，因为真正的智慧是难以言传、只能靠自己体会与实践的。轮扁做轮子多年，知道松紧之间的微妙分
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-05-04 16:14" pubdate>
+              2025-05-04
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/04/29/monthly-2025-03/" target="_self">
+          25年03月总结 ｜ 快速启动，战胜拖延
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/04/29/monthly-2025-03/" target="_self">
+          
+          
+            
+          
+          一些感悟4/3就想着要写3月总结，拖着拖着就到了月底。
+不禁反思自己的拖延症为何如此严重，偶然读到一篇文章 《为什么快速工作比想象中的更重要？》[1]，我在文中找到了一些线索。
+作者认为快速完成的意义除了可以在单位时间内完成更多任务外，但不止于此：
+
+当行动迅速时，大脑会本能降低对新任务对成本评估，从而更愿意主动尝试
+“快”会形成正反馈，“慢”会形成负反馈
+
+自己之所以不愿意写这篇总结，是因为大脑
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-29 19:36" pubdate>
+              2025-04-29
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/03/18/monthly-2025-02/" target="_self">
+          25年02月总结 ｜ 咬定青山不放松，立根原在破岩中
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/03/18/monthly-2025-02/" target="_self">
+          
+          
+            
+          
+          咬定青山不放松，立根原在破岩中。
+一些感悟一个改变易疲劳体质的小技巧：管理你的能量，而非时间。
+因为时间是有限资源，能量则不同。要意识到，能量是不断被消耗的，能量的消耗速度与事项复杂程度成正比，同时高能量能够创造高绩效。
+好身体会产生能量，好的情绪可以提高能量质量，集中精力可以加强能量，精神追求可以激发能量。
+学习成长人活一世，是一个不断学习、适应的过程，学习如何与这个世界相处、学习如何与自己相处
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-18 22:25" pubdate>
+              2025-03-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2025/02/09/monthly-2025-01/" target="_self">
+          25年01月总结 ｜ 过往皆为序章，新年充满希望
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2025/02/09/monthly-2025-01/" target="_self">
+          
+          
+            
+          
+          过往皆为序章，新年充满希望。
+任何事物都是有规律的，工作生活都是如此。而比知道规律本身更重要的，是能够在实践中懂得利用这些规律实现目标。
+前面三十年在随波逐流，无论是成功还是失败，总是被动接受着，没有思考为什么会成功，为什么会失败。品尝到2024年浑浑噩噩带来的恶果后，意识到自己该做出改变了，是时候拥有一套稳定的人生操作系统，帮助自己形成一套稳定的内核，从而走得更远、走得更稳。
+前面三十年在随波逐
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-02-09 21:25" pubdate>
+              2025-02-09
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/">月度总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/26/project-time-estimation/" target="_self">
+          如何提高工时评估准确性
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/26/project-time-estimation/" target="_self">
+          
+          
+            
+          
+          
+（开发软件时）前90%的代码要花费90%的开发时间，剩余的10%的代码要再花费90%的开发时间。The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-26 20:15" pubdate>
+              2022-05-26
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/01/06/nonviolent-communication-note/" target="_self">
+          《非暴力沟通》读书笔记
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/01/06/nonviolent-communication-note/" target="_self">
+          
+          
+            
+          
+          缘起我们大多数的人使用的语言倾向于评判、比较、命令和指责，而不是鼓励我们倾听彼此的感受和需要。
+核心概念什么是“暴力”？暴力分“身体的暴力”与“隐蔽的暴力”两种。如果某个行为涉及使用武力，那它就属于身体的暴力；如果主要造成精神伤害，那它就属于隐蔽的暴力。
+后者虽与前者相比，危害性不那么明显，但其害处更大，归根结底是“隐蔽的暴力”激怒了受害者，使他做出暴力的反抗。
+暴力的根源在于人们忽视彼此的感受与
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-01-06 22:47" pubdate>
+              2022-01-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+            
+              <a href="/tags/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/">非暴力沟通</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/29/es2021-features/" target="_self">
+          ES2021 新特性！
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/06/29/es2021-features/" target="_self">
+          
+          
+            
+          
+          逻辑赋值运算符（Logical Assignment Operators）
+TC39提案GitHub地址：📖
+
+示例1234567891011// 逻辑或赋值x ||= y;x || (x = y);// 逻辑与赋值x &amp;&amp;= y;x &amp;&amp; (x = y);// 逻辑空赋值x ??= y;x ?? (x = y);
+1234567891011const updat
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-29 09:51" pubdate>
+              2021-06-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">技术研究</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ES2021/">ES2021</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/02/navigator-clipboard-api/" target="_self">
+          navigator.clipboard API
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/02/navigator-clipboard-api/" target="_self">
+          
+          
+            
+          
+          navigator.clipboard APIWeb开发者一直以来希望能够访问剪贴板，通过操作剪贴板，好的一方面是我们可以实现复制订单号、读取用户复制的吱口令等方便用户的功能；坏的一面是开发者可以复制恶意文本，使用户可能不小心粘贴到表单，使其发生财产或其他损失等等。
+过去我们通过document.execCommand(&#39;copy&#39;)来完成复制的功能，但这是不可靠的。navigat
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-02 15:21" pubdate>
+              2021-02-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">技术研究</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/navigator-clipboard/">navigator.clipboard</a>
+            
+              <a href="/tags/Clipboard/">Clipboard</a>
+            
+              <a href="/tags/%E5%89%AA%E8%B4%B4%E6%9D%BF/">剪贴板</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/15/about-web-now-and-future/" target="_self">
+          Web前端的现状与未来
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/15/about-web-now-and-future/" target="_self">
+          
+          
+            
+          
+          Web前端的发展历史Web前端的由来1991年8月，Tim Berners-Lee发布了第一个简单的，基于文本，包含几个链接的网站。但此后的网站发展一直很缓慢，这是因为早期的网页完全由单调地文本和图片所构成，对人们而言，毫无吸引力。
+到了2005年，互联网开始进入Web2.0时代，由于AJAX技术的出现，各种类似桌面软件的Web应用开始大量涌现。由此，网站建设发生了巨大的变革。与此同时，“前端”这
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-15 15:02" pubdate>
+              2020-09-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/">思考总结</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%80%9D%E8%80%83/">工作思考</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/upgrade-sd-base-framework/" target="_self">
+          项目基础框架升级小记
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/27/upgrade-sd-base-framework/" target="_self">
+          
+          
+            
+          
+          缘起由于本项目由umi2搭建完成，出于后期配置方便、可维护性，提高代码编译速度的考虑，特此升级umi框架。
+过程升级步骤1. 明确升级范围项目依赖应是自下向上升级，先升级底层运行框架，再升级业务中需要用到的依赖；修改范围由小到大，优先修改配置文件、然后再改view层代码，这样容易排查bug。
+2. 检查本地环境框架对node、npm等会有最低版本要求，如umi需要node&gt;= 10.13.0
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 09:16" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/">思考总结</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/dva/">dva</a>
+            
+              <a href="/tags/umi/">umi</a>
+            
+              <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7/">项目升级</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备16052686号-2
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script defer>
+      (function () {
+        var gtag = document.createElement("script");
+        gtag.src = "https://www.googletagmanager.com/gtag/js?id=G-SJEXRJ8ZC6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gtag, s);
+      })();
+    </script>
+
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJEXRJ8ZC6');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
