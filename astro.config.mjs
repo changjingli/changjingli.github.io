@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://changjingli.github.io',
+  site: 'https://www.iamjingli.com',
   publicDir: './static',
   output: 'static',
   integrations: [sitemap()],

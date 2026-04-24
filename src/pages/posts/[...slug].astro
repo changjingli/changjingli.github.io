@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getPosts, formatDate, getPostSlug, getReadingTime } from '@/utils/posts';
+import { absoluteUrl, siteConfig } from '@/config/site';
+import { getExcerpt, getPostPath, getPosts, formatDate, getPostSlug, getReadingTime } from '@/utils/posts';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -9,8 +10,33 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const description = post.data.description ?? getExcerpt(post.body, 150);
+const canonicalPath = getPostPath(post);
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description,
+  datePublished: post.data.date.toISOString(),
+  dateModified: (post.data.updated ?? post.data.date).toISOString(),
+  url: absoluteUrl(canonicalPath),
+  mainEntityOfPage: absoluteUrl(canonicalPath),
+  inLanguage: siteConfig.locale,
+  author: {
+    '@type': 'Person',
+    name: siteConfig.author,
+    url: siteConfig.url,
+  },
+  publisher: {
+    '@type': 'Person',
+    name: siteConfig.author,
+    url: siteConfig.url,
+  },
+  keywords: post.data.tags,
+};
 ---
-<BaseLayout title={post.data.title} description={post.data.description ?? post.data.title}>
+<BaseLayout title={post.data.title} description={description} type="article" publishedTime={post.data.date} modifiedTime={post.data.updated ?? post.data.date}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
   <article class="article-shell">
     <header class="article-header">
       <p class="kicker">Article</p>

@@ -1,13 +1,29 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
+import { siteConfig } from '@/config/site';
 import { getAllTags, getPosts } from '@/utils/posts';
 
 const posts = await getPosts();
 const tags = getAllTags(posts);
 const latestPosts = posts.slice(0, 8);
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteConfig.title,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  inLanguage: siteConfig.locale,
+  publisher: {
+    '@type': 'Person',
+    name: siteConfig.author,
+    url: siteConfig.url,
+    jobTitle: '全栈工程师，主前端，AI 智能体开发者',
+  },
+};
 ---
 <BaseLayout current="home">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
   <section class="site-shell hero">
     <div class="hero-card">
       <p class="kicker">Personal Journal</p>
