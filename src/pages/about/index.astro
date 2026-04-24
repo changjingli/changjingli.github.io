@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllTags, getPosts } from '@/utils/posts';
+
+const posts = await getPosts();
+const tags = getAllTags(posts).slice(0, 8);
+---
+<BaseLayout title="关于" current="about">
+  <section class="site-shell page-title">
+    <p class="kicker">About</p>
+    <h1>关于这个博客</h1>
+    <p>这里是常敬礼的长期写作空间。前端是根基，全栈是路径，AI 智能体是新的能力边界，终身学习是底层信仰。</p>
+  </section>
+  <section class="site-shell" style="padding-bottom: 80px;">
+    <div class="panel prose heti">
+      <p>我是全栈工程师，主前端，也在持续构建 AI 智能体开发能力。我更愿意把自己定义为窗口型人才：既能深入工程实现，也能理解产品、业务和协作场景，并把复杂问题翻译成可执行的方案。</p>
+      <p>我会在这里记录前端工程实践、全栈探索、AI Agent、效率方法、读书笔记和每月复盘。写作不是为了制造观点，而是为了把经历沉淀成可复用的判断。</p>
+      <p>如果你也关注 Web、AI、工程效率、个人成长或家庭陪伴，欢迎从这些主题开始阅读：</p>
+      <div class="tag-row">
+        {tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag.name)}/`}>{tag.name}</a>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

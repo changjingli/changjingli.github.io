@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getAllTags, getPosts } from '@/utils/posts';
+
+const posts = await getPosts();
+const tags = getAllTags(posts);
+const latestPosts = posts.slice(0, 8);
+---
+<BaseLayout current="home">
+  <section class="site-shell hero">
+    <div class="hero-card">
+      <p class="kicker">Personal Journal</p>
+      <h1>从前端到全栈，再到 AI 智能体，把学习写成复利。</h1>
+      <p>这里记录前端工程实践、全栈探索、AI Agent 开发、月度复盘，以及一个终身学习者对效率、家庭和自我进化的观察。</p>
+      <div class="hero-actions">
+        <a class="button primary" href="/archives/">浏览全部文章</a>
+        <a class="button" href="/tags/">按主题阅读</a>
+      </div>
+    </div>
+    <aside class="profile-card" aria-label="作者简介">
+      <div>
+        <img class="avatar" src="/avatar.png" alt="常敬礼头像" />
+        <h2>常敬礼</h2>
+        <p>全栈工程师，主前端，具备 AI 智能体开发能力。相信终身学习，也努力成为连接技术、产品与业务的窗口型人才。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>{posts.length}</strong><span>篇文章</span></div>
+        <div class="stat"><strong>{tags.length}</strong><span>个标签</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="site-shell">
+    <div class="section-head">
+      <div>
+        <h2>最新文章</h2>
+        <p>从最近的复盘和思考开始。</p>
+      </div>
+      <a class="button" href="/archives/">查看归档</a>
+    </div>
+    <div class="post-grid">
+      {latestPosts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

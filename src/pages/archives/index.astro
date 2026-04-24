@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { formatDate, getPostPath, getPosts } from '@/utils/posts';
+
+const posts = await getPosts();
+---
+<BaseLayout title="归档" current="archives">
+  <section class="site-shell page-title">
+    <p class="kicker">Archive</p>
+    <h1>文章归档</h1>
+    <p>按时间倒序浏览所有文章，观察主题如何随着阶段变化。</p>
+  </section>
+  <section class="site-shell archive-list">
+    {posts.map((post) => (
+      <div class="archive-item">
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        <a href={getPostPath(post)}>{post.data.title}</a>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

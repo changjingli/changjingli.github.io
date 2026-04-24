@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: 'home' | 'archives' | 'tags' | 'about';
+}
+
+const {
+  title = '敬礼的唠叨',
+  description = '常敬礼的个人博客：前端技术、成长复盘、读书笔记与生活观察。',
+  current,
+} = Astro.props;
+const pageTitle = title === '敬礼的唠叨' ? title : `${title} · 敬礼的唠叨`;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <ClientRouter />
+    <GoogleAnalytics />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell nav">
+        <a class="brand" href="/" aria-label="敬礼的唠叨首页">
+          <span class="brand-mark">常</span>
+          <span class="brand-text">
+            <span class="brand-title">敬礼的唠叨</span>
+            <span class="brand-subtitle">Stay Hungry, Stay Foolish.</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="主导航">
+          <a href="/" aria-current={current === 'home' ? 'page' : undefined}>首页</a>
+          <a href="/archives/" aria-current={current === 'archives' ? 'page' : undefined}>归档</a>
+          <a href="/tags/" aria-current={current === 'tags' ? 'page' : undefined}>标签</a>
+          <a href="/about/" aria-current={current === 'about' ? 'page' : undefined}>关于</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="site-shell">
+        <span>© {new Date().getFullYear()} 常敬礼</span>
+        <span>Built with Astro · 保持好奇，保持进步</span>
+      </div>
+    </footer>
+  </body>
+</html>

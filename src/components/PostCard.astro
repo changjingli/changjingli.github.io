@@ -1,0 +1,32 @@
+---
+import type { BlogPost } from '@/utils/posts';
+import { formatDate, getExcerpt, getPostPath, getReadingTime } from '@/utils/posts';
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+const date = post.data.date;
+const day = new Intl.DateTimeFormat('zh-CN', { day: '2-digit' }).format(date);
+const month = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: '2-digit' }).format(date);
+---
+<a class="post-card" href={getPostPath(post)}>
+  <time class="post-date" datetime={date.toISOString()}>
+    <strong>{day}</strong>
+    <span>{month}</span>
+  </time>
+  <article>
+    <h3>{post.data.title}</h3>
+    <p>{post.data.description ?? getExcerpt(post.body)}</p>
+    <div class="meta-row">
+      <span>{formatDate(date)}</span>
+      <span>·</span>
+      <span>{getReadingTime(post.body)} 分钟阅读</span>
+      {post.data.tags.length > 0 && <span>·</span>}
+      <span class="tag-row">
+        {post.data.tags.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
+      </span>
+    </div>
+  </article>
+</a>

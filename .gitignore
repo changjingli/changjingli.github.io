@@ -4,5 +4,9 @@ db.json
 *.log
 node_modules/
 public/
+dist/
+.astro/
 .deploy*/
 .idea/
+.env
+.env.*

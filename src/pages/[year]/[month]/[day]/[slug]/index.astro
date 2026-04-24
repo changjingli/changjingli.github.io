@@ -1,0 +1,41 @@
+---
+import { legacyPostAliases } from '@/data/legacy-post-aliases';
+import { getPosts } from '@/utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const postSlugs = new Set(posts.map((post) => post.id.replace(/\.md$/, '')));
+
+  return legacyPostAliases
+    .filter((alias) => postSlugs.has(alias.slug))
+    .map((alias) => ({
+      params: {
+        year: alias.year,
+        month: alias.month,
+        day: alias.day,
+        slug: alias.slug,
+      },
+      props: {
+        target: `/posts/${alias.slug}/`,
+      },
+    }));
+}
+
+const { target } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>正在跳转 · 敬礼的唠叨</title>
+  </head>
+  <body>
+    <p>文章地址已迁移，正在跳转到 <a href={target}>{target}</a>。</p>
+    <script is:inline define:vars={{ target }}>
+      window.location.replace(target);
+    </script>
+  </body>
+</html>
