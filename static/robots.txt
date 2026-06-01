@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.iamjingli.com/sitemap-index.xml
+LLMs: https://www.iamjingli.com/llms.txt
