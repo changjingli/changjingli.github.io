@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
+import GrowthAnalytics from '@/components/GrowthAnalytics.astro';
 import { absoluteUrl, siteConfig } from '@/config/site';
 
 interface Props {
@@ -80,8 +81,12 @@ const imageUrl = absoluteUrl(image);
     <footer class="site-footer">
       <div class="site-shell">
         <span>© {new Date().getFullYear()} 常敬礼</span>
-        <span>Built with Astro · 保持好奇，保持进步</span>
+        <span class="footer-links">
+          <a href="/rss.xml" data-growth-event="subscription_click" data-growth-label="footer_rss">RSS 订阅</a>
+          <span>Built with Astro · 保持好奇，保持进步</span>
+        </span>
       </div>
     </footer>
+    <GrowthAnalytics />
   </body>
 </html>

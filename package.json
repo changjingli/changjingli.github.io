@@ -11,7 +11,8 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "verify:llms": "node scripts/verify-llms.mjs"
+    "verify:llms": "node scripts/verify-llms.mjs",
+    "verify:growth": "npm run build && node scripts/verify-growth.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",

@@ -11,7 +11,7 @@ const isProduction = import.meta.env.PROD;
         window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', measurementId);
+      gtag('config', measurementId, { send_page_view: false });
     </script>
   </>
 )}

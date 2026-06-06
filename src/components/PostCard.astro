@@ -1,17 +1,24 @@
 ---
 import type { BlogPost } from '@/utils/posts';
-import { formatDate, getExcerpt, getPostPath, getReadingTime } from '@/utils/posts';
+import { formatDate, formatDay, formatYearMonth, getExcerpt, getPostPath, getReadingTime } from '@/utils/posts';
 
 interface Props {
   post: BlogPost;
+  growthEvent?: string;
+  variant?: 'default' | 'compact';
 }
 
-const { post } = Astro.props;
+const { post, growthEvent, variant = 'default' } = Astro.props;
 const date = post.data.date;
-const day = new Intl.DateTimeFormat('zh-CN', { day: '2-digit' }).format(date);
-const month = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: '2-digit' }).format(date);
+const day = formatDay(date);
+const month = formatYearMonth(date);
 ---
-<a class="post-card" href={getPostPath(post)}>
+<a
+  class:list={['post-card', { compact: variant === 'compact' }]}
+  href={getPostPath(post)}
+  data-growth-event={growthEvent}
+  data-growth-label={growthEvent ? post.data.title : undefined}
+>
   <time class="post-date" datetime={date.toISOString()}>
     <strong>{day}</strong>
     <span>{month}</span>

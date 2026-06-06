@@ -1,6 +1,7 @@
 ---
 title: 《非暴力沟通》读书笔记
 date: 2022-01-06 22:47:23
+description: 梳理非暴力沟通的观察、感受、需要和请求四个步骤，以及如何减少评判、指责和隐蔽的语言暴力。
 tags: [读书笔记, 非暴力沟通]
 category: [读书笔记]
 wxShareImgUrl: https://changjingli-blog.oss-cn-shanghai.aliyuncs.com//blog/s93464877wTtmg.jpg

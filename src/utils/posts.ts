@@ -13,6 +13,22 @@ export function formatDate(date: Date) {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
+    timeZone: 'Asia/Shanghai',
+  }).format(date);
+}
+
+export function formatDay(date: Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    day: '2-digit',
+    timeZone: 'Asia/Shanghai',
+  }).format(date);
+}
+
+export function formatYearMonth(date: Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    year: 'numeric',
+    month: '2-digit',
+    timeZone: 'Asia/Shanghai',
   }).format(date);
 }
 
@@ -52,4 +68,46 @@ export function getAllTags(posts: BlogPost[]) {
   return [...tagMap.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, 'zh-CN'));
+}
+
+export function getPostsBySlugs(posts: BlogPost[], slugs: readonly string[]) {
+  const postMap = new Map(posts.map((post) => [getPostSlug(post), post]));
+  return slugs.flatMap((slug) => {
+    const post = postMap.get(slug);
+    return post ? [post] : [];
+  });
+}
+
+export function getRelatedPosts(
+  posts: BlogPost[],
+  currentPost: BlogPost,
+  limit = 3,
+  excludedSlugs: string[] = [],
+) {
+  const currentSlug = getPostSlug(currentPost);
+  const currentTags = new Set(currentPost.data.tags);
+  const excluded = new Set([currentSlug, ...excludedSlugs]);
+
+  return posts
+    .filter((post) => !excluded.has(getPostSlug(post)))
+    .map((post) => ({
+      post,
+      sharedTags: post.data.tags.filter((tag) => currentTags.has(tag)).length,
+    }))
+    .sort(
+      (left, right) =>
+        right.sharedTags - left.sharedTags ||
+        right.post.data.date.getTime() - left.post.data.date.getTime(),
+    )
+    .slice(0, limit)
+    .map(({ post }) => post);
+}
+
+export function getAdjacentPosts(posts: BlogPost[], currentPost: BlogPost) {
+  const currentIndex = posts.findIndex((post) => getPostSlug(post) === getPostSlug(currentPost));
+
+  return {
+    newerPost: currentIndex > 0 ? posts[currentIndex - 1] : undefined,
+    olderPost: currentIndex >= 0 ? posts[currentIndex + 1] : undefined,
+  };
 }

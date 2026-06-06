@@ -1,7 +1,17 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleGrowth from '@/components/ArticleGrowth.astro';
 import { absoluteUrl, siteConfig } from '@/config/site';
-import { getExcerpt, getPostPath, getPosts, formatDate, getPostSlug, getReadingTime } from '@/utils/posts';
+import {
+  formatDate,
+  getAdjacentPosts,
+  getExcerpt,
+  getPostPath,
+  getPosts,
+  getPostSlug,
+  getReadingTime,
+  getRelatedPosts,
+} from '@/utils/posts';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -12,6 +22,10 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 const description = post.data.description ?? getExcerpt(post.body, 150);
 const canonicalPath = getPostPath(post);
+const posts = await getPosts();
+const { newerPost, olderPost } = getAdjacentPosts(posts, post);
+const adjacentSlugs = [newerPost, olderPost].flatMap((entry) => entry ? [getPostSlug(entry)] : []);
+const relatedPosts = getRelatedPosts(posts, post, 3, adjacentSlugs);
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -37,7 +51,12 @@ const articleJsonLd = {
 ---
 <BaseLayout title={post.data.title} description={description} type="article" publishedTime={post.data.date} modifiedTime={post.data.updated ?? post.data.date}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
-  <article class="article-shell">
+  <article
+    class="article-shell"
+    data-article
+    data-article-title={post.data.title}
+    data-article-slug={getPostSlug(post)}
+  >
     <header class="article-header">
       <p class="kicker">Article</p>
       <h1>{post.data.title}</h1>
@@ -52,8 +71,15 @@ const articleJsonLd = {
         </div>
       )}
     </header>
-    <div class="prose heti">
+    <div class="prose heti" data-article-content>
       <Content />
     </div>
+    <ArticleGrowth
+      title={post.data.title}
+      canonicalUrl={absoluteUrl(canonicalPath)}
+      relatedPosts={relatedPosts}
+      newerPost={newerPost}
+      olderPost={olderPost}
+    />
   </article>
 </BaseLayout>

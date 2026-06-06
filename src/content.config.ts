@@ -5,12 +5,24 @@ const stringArray = z.preprocess((value) => {
   return Array.isArray(value) ? value : [value];
 }, z.array(z.string()));
 
+const shanghaiDate = z.preprocess((value) => {
+  if (value instanceof Date) {
+    return new Date(value.getTime() - 8 * 60 * 60 * 1000);
+  }
+
+  if (typeof value === 'string' && !/[zZ]|[+-]\d{2}:?\d{2}$/.test(value)) {
+    return new Date(`${value.replace(' ', 'T')}+08:00`);
+  }
+
+  return value;
+}, z.coerce.date());
+
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.coerce.date(),
-    updated: z.coerce.date().optional(),
+    date: shanghaiDate,
+    updated: shanghaiDate.optional(),
     description: z.string().optional(),
     tags: stringArray.default([]),
     category: stringArray.default([]),

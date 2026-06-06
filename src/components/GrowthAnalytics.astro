@@ -1,0 +1,74 @@
+<script>
+  type GrowthWindow = Window & {
+    gtag?: (...args: unknown[]) => void;
+    __growthAnalyticsBound?: boolean;
+  };
+
+  const growthWindow = window as GrowthWindow;
+  let activePath = '';
+  let trackedHalf = false;
+  let trackedComplete = false;
+
+  function track(eventName: string, parameters: Record<string, string | number> = {}) {
+    growthWindow.gtag?.('event', eventName, parameters);
+  }
+
+  function setupPageTracking() {
+    if (activePath === window.location.pathname) return;
+
+    activePath = window.location.pathname;
+    trackedHalf = false;
+    trackedComplete = false;
+
+    track('page_view', {
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      page_title: document.title,
+    });
+
+    const article = document.querySelector<HTMLElement>('[data-article]');
+    if (article) {
+      track('article_view', {
+        article_title: article.dataset.articleTitle ?? document.title,
+        article_slug: article.dataset.articleSlug ?? window.location.pathname,
+      });
+    }
+  }
+
+  function trackReadingProgress() {
+    const content = document.querySelector<HTMLElement>('[data-article-content]');
+    if (!content || (trackedHalf && trackedComplete)) return;
+
+    const rect = content.getBoundingClientRect();
+    const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / rect.height));
+
+    if (!trackedHalf && progress >= 0.5) {
+      trackedHalf = true;
+      track('scroll_50', { article_path: window.location.pathname });
+    }
+
+    if (!trackedComplete && progress >= 0.9) {
+      trackedComplete = true;
+      track('read_complete', { article_path: window.location.pathname });
+    }
+  }
+
+  if (!growthWindow.__growthAnalyticsBound) {
+    growthWindow.__growthAnalyticsBound = true;
+
+    document.addEventListener('astro:page-load', setupPageTracking);
+    document.addEventListener('scroll', trackReadingProgress, { passive: true });
+    document.addEventListener('click', (event) => {
+      const target = event.target as Element | null;
+      const element = target?.closest<HTMLElement>('[data-growth-event]');
+      const eventName = element?.dataset.growthEvent;
+      if (!eventName) return;
+
+      track(eventName, {
+        label: element.dataset.growthLabel ?? element.textContent?.trim().slice(0, 80) ?? '',
+        destination: element instanceof HTMLAnchorElement ? element.href : '',
+        page_path: window.location.pathname,
+      });
+    });
+  }
+</script>

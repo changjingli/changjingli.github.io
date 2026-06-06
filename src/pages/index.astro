@@ -2,11 +2,12 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
 import { siteConfig } from '@/config/site';
-import { getAllTags, getPosts } from '@/utils/posts';
+import { getAllTags, getPosts, getPostsBySlugs } from '@/utils/posts';
 
 const posts = await getPosts();
 const tags = getAllTags(posts);
-const latestPosts = posts.slice(0, 8);
+const featuredPosts = getPostsBySlugs(posts, siteConfig.featuredPostSlugs);
+const latestPosts = posts.slice(0, 6);
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -26,12 +27,12 @@ const websiteJsonLd = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
   <section class="site-shell hero">
     <div class="hero-card">
-      <p class="kicker">Personal Journal</p>
-      <h1>记录学习、折腾和思考。</h1>
-      <p>不急着讲大道理，先把自己的小道理写清楚。</p>
+      <p class="kicker">Engineer · Thinker · Father</p>
+      <h1>认真做软件，也认真生活。</h1>
+      <p>写给正在与 AI 一起工作的工程师：这里有真实项目里的判断、效率方法，以及一个普通人持续成长的复盘。</p>
       <div class="hero-actions">
-        <a class="button primary" href="/archives/">浏览全部文章</a>
-        <a class="button" href="/tags/">按主题阅读</a>
+        <a class="button primary" href="#start-here" data-growth-event="hero_cta_click">从精选文章开始</a>
+        <a class="button" href="/rss.xml" data-growth-event="subscription_click" data-growth-label="hero_rss">订阅 RSS</a>
       </div>
     </div>
     <aside class="profile-card" aria-label="作者简介">
@@ -47,13 +48,53 @@ const websiteJsonLd = {
     </aside>
   </section>
 
-  <section class="site-shell">
+  <section class="site-shell discovery-section" id="start-here">
+    <div class="section-head">
+      <div>
+        <p class="kicker">Start Here</p>
+        <h2>新读者从这里开始</h2>
+        <p>先读几篇更能代表这里的文章，再决定要不要留下来。</p>
+      </div>
+      <a class="button" href="/archives/" data-growth-event="archive_click">浏览全部文章</a>
+    </div>
+    <div class="post-grid featured-grid">
+      {featuredPosts.map((post) => (
+        <PostCard post={post} variant="compact" growthEvent="featured_post_click" />
+      ))}
+    </div>
+  </section>
+
+  <section class="site-shell topic-section" aria-labelledby="topic-heading">
+    <div class="section-head compact">
+      <div>
+        <p class="kicker">Reading Paths</p>
+        <h2 id="topic-heading">按你正在面对的问题阅读</h2>
+      </div>
+    </div>
+    <div class="topic-grid">
+      {siteConfig.topics.map((topic, index) => (
+        <a
+          class="topic-card"
+          href={topic.href}
+          data-growth-event="topic_click"
+          data-growth-label={topic.name}
+        >
+          <span>0{index + 1}</span>
+          <h3>{topic.name}</h3>
+          <p>{topic.description}</p>
+          <strong>{topic.action} →</strong>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="site-shell latest-section">
     <div class="section-head">
       <div>
         <h2>最新文章</h2>
-        <p>从最近的复盘和思考开始。</p>
+        <p>继续跟进最近的实践、复盘和思考。</p>
       </div>
-      <a class="button" href="/archives/">查看归档</a>
+      <a class="button" href="/archives/" data-growth-event="archive_click">查看归档</a>
     </div>
     <div class="post-grid">
       {latestPosts.map((post) => <PostCard post={post} />)}
